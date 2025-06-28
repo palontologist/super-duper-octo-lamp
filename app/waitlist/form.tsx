@@ -66,7 +66,7 @@ export function WaitlistForm() {
         >
           <FormField
             control={form.control}
-            name="email"
+            name="Email"
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Email</FormLabel>

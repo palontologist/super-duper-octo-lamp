@@ -1,92 +1,172 @@
 "use client";
 
-import { Ripple } from "@/components/magicui/ripple";
-import { Card, CardContent } from "@/components/ui/card";
-import Link from "next/link";
+import { motion } from "framer-motion";
+import { useState, memo, useCallback, useMemo } from "react";
+import { Navigation } from "@/components/ui/navigation";
 
-// Podcast data
+// Podcast data with the requested YouTube videos
 const podcastEpisodes = [
   {
     id: 1,
     title: "Sustainable Living",
     description: "Reducing your carbon footprint",
-    youtubeId: "dQw4w9WgXcQ",
+    youtubeId: "PZoz8zfmhq0",
+    startTime: 300,
     duration: "45:22"
   },
   {
     id: 2,
     title: "Community Conservation",
     description: "Local environmental efforts",
-    youtubeId: "dQw4w9WgXcQ",
+    youtubeId: "CDdree8PcIE",
+    startTime: 1260,
     duration: "38:15"
   },
   {
     id: 3,
     title: "Tech for Good",
     description: "Innovative solutions",
-    youtubeId: "dQw4w9WgXcQ",
+    youtubeId: "KpxbgsBP4Ok",
+    startTime: 420,
     duration: "52:40"
   }
 ];
 
-export default function VibesPage() {
-  return (
-    <div className="min-h-screen bg-black relative overflow-hidden">
-      <Ripple />
-      
-      
-      {/* Main Content */}
-    
-        {/* Headline */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500">
-              The future isn't about feeling good
-            </span>
-          </h1>
-          <p className="text-gray-400 text-lg">
-            It's about knowing what exactly works
-          </p>
-        </div>
+// Memoized video player component
+const VideoPlayer = memo(({ youtubeId, startTime, title }: { 
+  youtubeId: string;
+  startTime: number;
+  title: string;
+}) => (
+  <div className="aspect-square w-full max-w-md bg-zinc-900 relative">
+    <iframe
+      src={`https://www.youtube.com/embed/${youtubeId}?start=${startTime}&autoplay=0&controls=1&modestbranding=1&rel=0`}
+      title={title}
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      className="absolute inset-0 w-full h-full"
+      loading="lazy"
+    />
+  </div>
+));
 
-        {/* Podcast Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {podcastEpisodes.map((episode) => (
-            <Card key={episode.id} className="bg-gray-900/80 border-gray-800 hover:border-teal-500/30 transition-colors">
-              <div className="aspect-video bg-black">
-                <iframe
-                  src={`https://www.youtube.com/embed/${episode.youtubeId}`}
-                  title={episode.title}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  className="w-full h-full"
-                  loading="lazy"
-                />
+// Ensure component has displayName for better debugging in React DevTools
+VideoPlayer.displayName = "VideoPlayer";
+
+// Memoized typography component
+const SpacedTypography = memo(() => (
+  <div className="space-y-1 tracking-wider">
+    <div className="flex space-x-8">
+      <span className="text-white text-xl md:text-2xl">w</span>
+      <span className="text-white text-xl md:text-2xl">e</span>
+    </div>
+    
+    <div>
+      <span className="text-white text-xl md:text-2xl block">believe</span>
+      <span className="text-white text-xl md:text-2xl block">in</span>
+      <span className="text-white text-xl md:text-2xl block">the</span>
+    </div>
+    
+    <div className="flex space-x-8">
+      <span className="text-white text-xl md:text-2xl">p</span>
+      <span className="text-white text-xl md:text-2xl">o</span>
+      <span className="text-white text-xl md:text-2xl">w</span>
+      <span className="text-white text-xl md:text-2xl">e</span>
+      <span className="text-white text-xl md:text-2xl">r</span>
+    </div>
+    
+    <div className="flex space-x-8">
+      <span className="text-white text-xl md:text-2xl">o</span>
+      <span className="text-white text-xl md:text-2xl">f</span>
+    </div>
+    
+    <div className="flex space-x-8">
+      <span className="text-white text-xl md:text-2xl">c</span>
+      <span className="text-white text-xl md:text-2xl">o</span>
+      <span className="text-white text-xl md:text-2xl">l</span>
+      <span className="text-white text-xl md:text-2xl">l</span>
+      <span className="text-white text-xl md:text-2xl">e</span>
+      <span className="text-white text-xl md:text-2xl">c</span>
+      <span className="text-white text-xl md:text-2xl">t</span>
+      <span className="text-white text-xl md:text-2xl">i</span>
+      <span className="text-white text-xl md:text-2xl">v</span>
+      <span className="text-white text-xl md:text-2xl">e</span>
+    </div>
+    
+    <div className="flex space-x-8">
+      <span className="text-white text-xl md:text-2xl">a</span>
+      <span className="text-white text-xl md:text-2xl">c</span>
+      <span className="text-white text-xl md:text-2xl">t</span>
+      <span className="text-white text-xl md:text-2xl">i</span>
+      <span className="text-white text-xl md:text-2xl">o</span>
+      <span className="text-white text-xl md:text-2xl">n</span>
+    </div>
+  </div>
+));
+
+// Ensure component has displayName for better debugging in React DevTools
+SpacedTypography.displayName = "SpacedTypography";
+
+// Memoized episode selector component
+const EpisodeSelector = memo(({ 
+  currentEpisode, 
+  onChange 
+}: { 
+  currentEpisode: number;
+  onChange: (index: number) => void;
+}) => (
+  <div className="flex space-x-2 mt-8">
+    {podcastEpisodes.map((_, index) => (
+      <button 
+        key={index} 
+        className={`w-2 h-2 rounded-full ${index === currentEpisode ? 'bg-white' : 'bg-gray-600'}`}
+        onClick={() => onChange(index)}
+        aria-label={`Select podcast episode ${index + 1}`}
+      />
+    ))}
+  </div>
+));
+
+EpisodeSelector.displayName = "EpisodeSelector";
+
+export default function VibesPage() {
+  const [currentEpisode, setCurrentEpisode] = useState(0);
+  
+  // Use the current podcast for the main video display
+  const mainEpisode = useMemo(() => podcastEpisodes[currentEpisode], [currentEpisode]);
+  
+  // Use useCallback for event handlers to prevent unnecessary re-renders
+  const handleEpisodeChange = useCallback((index: number) => {
+    setCurrentEpisode(index);
+  }, []);
+  
+  return (
+    <div className="h-screen bg-black flex flex-col justify-between overflow-hidden">
+      <main className="flex-grow flex items-center">
+        <div className="container mx-auto px-4 flex md:flex-row flex-col items-center">
+          {/* Left section - Podcast video embed */}
+          <div className="md:w-1/2 p-4 flex items-center justify-center">
+            <VideoPlayer 
+              youtubeId={mainEpisode.youtubeId}
+              startTime={mainEpisode.startTime}
+              title={mainEpisode.title}
+            />
+          </div>
+          
+          {/* Right section - Typography */}
+          <div className="md:w-1/2 p-4 flex flex-col items-start justify-center">
+            <SpacedTypography />
+            
+            {/* Episode selector - Small dots */}
+            <EpisodeSelector 
+              currentEpisode={currentEpisode}
+              onChange={handleEpisodeChange}
+            />
               </div>
-              <CardContent className="p-4">
-                <h3 className="font-bold text-white mb-1">{episode.title}</h3>
-                <p className="text-sm text-gray-400 mb-2">{episode.description}</p>
-                <div className="text-xs text-gray-500">{episode.duration}</div>
-              </CardContent>
-            </Card>
-          ))}
         </div>
-        <nav className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-        <div className="flex space-x-8 text-gray-400">
-          <Link href="/" className="hover:text-white transition-colors text-sm">
-            Home
-          </Link>
-          <Link href="/measure" className="hover:text-white transition-colors text-sm">
-            measure
-          </Link>
-          <Link href="/vibes" className="hover:text-white transition-colors text-sm">
-            Vibes
-          </Link>
-          <Link href="/start" className="hover:text-white transition-colors text-sm">
-            Start
-          </Link>
-        </div>
-      </nav>
+      </main>
+
+      {/* Navigation - Similar to other pages */}
+      <Navigation />
       </div>
- 
   );
 }

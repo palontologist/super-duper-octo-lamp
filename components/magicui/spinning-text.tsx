@@ -89,7 +89,7 @@ export function SpinningText({
           aria-hidden="true"
           key={`${index}-${letter}`}
           variants={itemVariants}
-          className="absolute left-1/2 top-1/2 inline-block"
+          className="absolute left-1/2 top-1/2 inline-block text-shadow"
           style={
             {
               "--index": index,
@@ -101,6 +101,7 @@ export function SpinningText({
                   translateY(calc(var(--radius, 5) * -1ch))
                 `,
               transformOrigin: "center",
+              textShadow: "0 0 5px rgba(255, 255, 255, 0.5)"
             } as React.CSSProperties
           }
         >

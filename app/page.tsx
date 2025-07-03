@@ -2,47 +2,47 @@
 
 import React, { useState, useEffect, useCallback, memo } from 'react';
 import { Button } from "@/components/ui/button"
-import Link from "next/link"
 import { TypingAnimation } from "@/components/magicui/typing-animation";
-import { TextReveal } from "@/components/magicui/text-reveal";
-import { BoxReveal } from "@/components/magicui/box-reveal";
 import { motion, AnimatePresence } from "framer-motion";
 import { StarsAnimation } from "@/components/magicui/stars-animation";
 import { Navigation } from "@/components/ui/navigation";
 import { HyperText } from "@/components/magicui/hyper-text";
+
 // Memoized Stars Animation component
 const MemoizedStarsAnimation = memo(StarsAnimation);
 
 // Memoized TypingPrompt component
-const TypingPrompt = memo(({ prompt }: { prompt: string }) => (
-  <TypingAnimation 
-    className="inline-block prompt-text"
-    duration={50}
-  >
-    {prompt}
-  </TypingAnimation>
-));
+const TypingPrompt = memo(({ prompt }: { prompt: string }) => {
+  return (
+    <TypingAnimation 
+      className="inline-block prompt-text"
+      duration={50}
+    >
+      {prompt}
+    </TypingAnimation>
+  );
+});
+
+TypingPrompt.displayName = 'TypingPrompt';
 
 export default function Page() {
-  const [isHovering, setIsHovering] = useState(false);
   const [currentPromptIndex, setCurrentPromptIndex] = useState(0);
   
   const prompts = [
     "Good intentions are not enough.",
     "You bike to work — how much CO₂ did you avoid?",
-    "I'm doing my part — really? Let's see.",
+    "I&apos;m doing my part — really? Let&apos;s see.",
     "I recycle - but do you know the impact",
     "Every action counts. Ready to prove it?"
   ];
   
-  // Use useEffect with empty dependency array as it doesn't depend on props/state
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentPromptIndex((prevIndex) => (prevIndex + 1) % prompts.length);
-    }, 5000); // Change prompt every 5 seconds
+    }, 5000);
     
     return () => clearInterval(interval);
-  }, []);
+  }, [prompts.length]);
   
   // Use useCallback for event handlers
   const handleMeasureClick = useCallback(() => {
@@ -82,7 +82,7 @@ export default function Page() {
               transition={{ duration: 0.8 }}
             >
             <HyperText>
-                It's time to measure what matters.
+                It&apos;s time to measure what matters.
               </HyperText>
             </motion.h1>
           

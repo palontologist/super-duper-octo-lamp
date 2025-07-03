@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { useState, memo, useCallback, useMemo } from "react";
 import { Navigation } from "@/components/ui/navigation";
 

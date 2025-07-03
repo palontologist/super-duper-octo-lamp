@@ -28,7 +28,7 @@ export function WaitlistForm() {
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      email: "",
+      Email: "",
     },
   });
 

@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { memo } from "react";
 import { Button } from "@/components/ui/button";
 import { Navigation } from "@/components/ui/navigation";
 import { WaitlistForm } from "@/components/ui/waitlist-form";

@@ -48,7 +48,7 @@ export function isValidEmail(email: string): boolean {
 /**
  * Creates a debounced function to limit execution frequency
  */
-export function debounce<T extends (...args: any[]) => any>(
+export function debounce<T extends (...args: unknown[]) => unknown>(
   fn: T,
   delay: number
 ): (...args: Parameters<T>) => void {

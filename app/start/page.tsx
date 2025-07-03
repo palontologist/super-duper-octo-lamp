@@ -46,6 +46,8 @@ const CommunityCard = memo(({ onDiscordClick }: { onDiscordClick: () => void }) 
   </div>
 ));
 
+CommunityCard.displayName = 'CommunityCard';
+
 export default function Page() {
   const handleDiscordClick = () => {
     window.open("https://discord.gg/AAPqTvHQ", "_blank", "noopener,noreferrer");

@@ -37,7 +37,7 @@ const VideoPlayer = memo(({ youtubeId, startTime, title }: {
   startTime: number;
   title: string;
 }) => (
-  <div className="aspect-square w-full max-w-md bg-zinc-900 relative">
+  <div className="aspect-video w-full max-w-md mx-auto bg-zinc-900 relative rounded-lg overflow-hidden shadow-xl">
     <iframe
       src={`https://www.youtube.com/embed/${youtubeId}?start=${startTime}&autoplay=0&controls=1&modestbranding=1&rel=0`}
       title={title}
@@ -54,50 +54,50 @@ VideoPlayer.displayName = "VideoPlayer";
 // Memoized typography component
 const SpacedTypography = memo(() => (
   <div className="space-y-1 tracking-wider">
-    <div className="flex space-x-8">
-      <span className="text-white text-xl md:text-2xl">w</span>
-      <span className="text-white text-xl md:text-2xl">e</span>
+    <div className="flex gap-4 sm:gap-8">
+      <span className="text-white text-lg sm:text-xl md:text-2xl">w</span>
+      <span className="text-white text-lg sm:text-xl md:text-2xl">e</span>
     </div>
     
     <div>
-      <span className="text-white text-xl md:text-2xl block">believe</span>
-      <span className="text-white text-xl md:text-2xl block">in</span>
-      <span className="text-white text-xl md:text-2xl block">the</span>
+      <span className="text-white text-lg sm:text-xl md:text-2xl block">believe</span>
+      <span className="text-white text-lg sm:text-xl md:text-2xl block">in</span>
+      <span className="text-white text-lg sm:text-xl md:text-2xl block">the</span>
     </div>
     
-    <div className="flex space-x-8">
-      <span className="text-white text-xl md:text-2xl">p</span>
-      <span className="text-white text-xl md:text-2xl">o</span>
-      <span className="text-white text-xl md:text-2xl">w</span>
-      <span className="text-white text-xl md:text-2xl">e</span>
-      <span className="text-white text-xl md:text-2xl">r</span>
+    <div className="flex flex-wrap gap-3 sm:gap-4 md:gap-8">
+      <span className="text-white text-lg sm:text-xl md:text-2xl">p</span>
+      <span className="text-white text-lg sm:text-xl md:text-2xl">o</span>
+      <span className="text-white text-lg sm:text-xl md:text-2xl">w</span>
+      <span className="text-white text-lg sm:text-xl md:text-2xl">e</span>
+      <span className="text-white text-lg sm:text-xl md:text-2xl">r</span>
     </div>
     
-    <div className="flex space-x-8">
-      <span className="text-white text-xl md:text-2xl">o</span>
-      <span className="text-white text-xl md:text-2xl">f</span>
+    <div className="flex gap-4 sm:gap-8">
+      <span className="text-white text-lg sm:text-xl md:text-2xl">o</span>
+      <span className="text-white text-lg sm:text-xl md:text-2xl">f</span>
     </div>
     
-    <div className="flex space-x-8">
-      <span className="text-white text-xl md:text-2xl">c</span>
-      <span className="text-white text-xl md:text-2xl">o</span>
-      <span className="text-white text-xl md:text-2xl">l</span>
-      <span className="text-white text-xl md:text-2xl">l</span>
-      <span className="text-white text-xl md:text-2xl">e</span>
-      <span className="text-white text-xl md:text-2xl">c</span>
-      <span className="text-white text-xl md:text-2xl">t</span>
-      <span className="text-white text-xl md:text-2xl">i</span>
-      <span className="text-white text-xl md:text-2xl">v</span>
-      <span className="text-white text-xl md:text-2xl">e</span>
+    <div className="flex flex-wrap gap-2 sm:gap-4 md:gap-8">
+      <span className="text-white text-lg sm:text-xl md:text-2xl">c</span>
+      <span className="text-white text-lg sm:text-xl md:text-2xl">o</span>
+      <span className="text-white text-lg sm:text-xl md:text-2xl">l</span>
+      <span className="text-white text-lg sm:text-xl md:text-2xl">l</span>
+      <span className="text-white text-lg sm:text-xl md:text-2xl">e</span>
+      <span className="text-white text-lg sm:text-xl md:text-2xl">c</span>
+      <span className="text-white text-lg sm:text-xl md:text-2xl">t</span>
+      <span className="text-white text-lg sm:text-xl md:text-2xl">i</span>
+      <span className="text-white text-lg sm:text-xl md:text-2xl">v</span>
+      <span className="text-white text-lg sm:text-xl md:text-2xl">e</span>
     </div>
     
-    <div className="flex space-x-8">
-      <span className="text-white text-xl md:text-2xl">a</span>
-      <span className="text-white text-xl md:text-2xl">c</span>
-      <span className="text-white text-xl md:text-2xl">t</span>
-      <span className="text-white text-xl md:text-2xl">i</span>
-      <span className="text-white text-xl md:text-2xl">o</span>
-      <span className="text-white text-xl md:text-2xl">n</span>
+    <div className="flex flex-wrap gap-2 sm:gap-4 md:gap-8">
+      <span className="text-white text-lg sm:text-xl md:text-2xl">a</span>
+      <span className="text-white text-lg sm:text-xl md:text-2xl">c</span>
+      <span className="text-white text-lg sm:text-xl md:text-2xl">t</span>
+      <span className="text-white text-lg sm:text-xl md:text-2xl">i</span>
+      <span className="text-white text-lg sm:text-xl md:text-2xl">o</span>
+      <span className="text-white text-lg sm:text-xl md:text-2xl">n</span>
     </div>
   </div>
 ));
@@ -113,11 +113,11 @@ const EpisodeSelector = memo(({
   currentEpisode: number;
   onChange: (index: number) => void;
 }) => (
-  <div className="flex space-x-2 mt-8">
+  <div className="flex space-x-4 mt-6 sm:mt-8">
     {podcastEpisodes.map((_, index) => (
       <button 
         key={index} 
-        className={`w-2 h-2 rounded-full ${index === currentEpisode ? 'bg-white' : 'bg-gray-600'}`}
+        className={`w-3 h-3 sm:w-4 sm:h-4 rounded-full ${index === currentEpisode ? 'bg-white' : 'bg-gray-600'} transition-colors`}
         onClick={() => onChange(index)}
         aria-label={`Select podcast episode ${index + 1}`}
       />
@@ -139,11 +139,11 @@ export default function VibesPage() {
   }, []);
   
   return (
-    <div className="h-screen bg-black flex flex-col justify-between overflow-hidden">
-      <main className="flex-grow flex items-center">
-        <div className="container mx-auto px-4 flex md:flex-row flex-col items-center">
+    <div className="min-h-screen bg-black flex flex-col justify-between overflow-x-hidden">
+      <main className="flex-grow flex items-center py-8 sm:py-12">
+        <div className="container mx-auto px-4 flex flex-col md:flex-row items-center gap-8 md:gap-4">
           {/* Left section - Podcast video embed */}
-          <div className="md:w-1/2 p-4 flex items-center justify-center">
+          <div className="w-full md:w-1/2 flex items-center justify-center">
             <VideoPlayer 
               youtubeId={mainEpisode.youtubeId}
               startTime={mainEpisode.startTime}
@@ -152,7 +152,7 @@ export default function VibesPage() {
           </div>
           
           {/* Right section - Typography */}
-          <div className="md:w-1/2 p-4 flex flex-col items-start justify-center">
+          <div className="w-full md:w-1/2 mt-8 md:mt-0 flex flex-col items-start justify-center">
             <SpacedTypography />
             
             {/* Episode selector - Small dots */}
@@ -160,12 +160,12 @@ export default function VibesPage() {
               currentEpisode={currentEpisode}
               onChange={handleEpisodeChange}
             />
-              </div>
+          </div>
         </div>
       </main>
 
       {/* Navigation - Similar to other pages */}
       <Navigation />
-      </div>
+    </div>
   );
 }

@@ -113,7 +113,7 @@ export default function Page() {
           <div className="w-full md:w-1/2 flex flex-col items-center">
             {/* Earth image */}
             <motion.div 
-              className="flex justify-center items-center mb-2"
+              className="flex justify-center items-center"
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
@@ -133,7 +133,7 @@ export default function Page() {
               </div>
             </motion.div>
 
-            {/* Rotating prompts below the earth image */}
+            {/* Commented out: Rotating prompts below the earth image 
             <div className="h-8 flex items-center justify-center w-full text-center">
               <AnimatePresence mode="wait">
                 <motion.div
@@ -150,6 +150,7 @@ export default function Page() {
                 </motion.div>
               </AnimatePresence>
             </div>
+            */}
           </div>
         </div>
       </div>

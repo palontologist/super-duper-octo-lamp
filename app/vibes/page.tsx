@@ -160,12 +160,12 @@ export default function VibesPage() {
               currentEpisode={currentEpisode}
               onChange={handleEpisodeChange}
             />
-          </div>
+              </div>
         </div>
       </main>
 
       {/* Navigation - Similar to other pages */}
       <Navigation />
-    </div>
+      </div>
   );
 }

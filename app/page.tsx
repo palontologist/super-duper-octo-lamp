@@ -4,12 +4,9 @@ import React, { useState, useEffect, useCallback, memo } from 'react';
 import { Button } from "@/components/ui/button"
 import { TypingAnimation } from "@/components/magicui/typing-animation";
 import { motion, AnimatePresence } from "framer-motion";
-import { StarsAnimation } from "@/components/magicui/stars-animation";
 import { Navigation } from "@/components/ui/navigation";
 import { HyperText } from "@/components/magicui/hyper-text";
-
-// Memoized Stars Animation component
-const MemoizedStarsAnimation = memo(StarsAnimation);
+import Image from "next/image";
 
 // Memoized TypingPrompt component
 const TypingPrompt = memo(({ prompt }: { prompt: string }) => {
@@ -31,7 +28,7 @@ export default function Page() {
   const prompts = [
     "Good intentions are not enough.",
     "You bike to work — how much CO₂ did you avoid?",
-    "I&apos;m doing my part — really? Let&apos;s see.",
+    "I'm doing my part — really? Let's see.",
     "I recycle - but do you know the impact",
     "Every action counts. Ready to prove it?"
   ];
@@ -60,92 +57,105 @@ export default function Page() {
       />
   
       {/* Full screen layout */}
-      <div className="flex flex-col items-center justify-center min-h-screen px-4 pt-20">
-        {/* Top decoration - small stars */}
-        <motion.div 
-          className="absolute top-24 w-full max-w-md h-20"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.7 }}
-          transition={{ duration: 1.5 }}
-        >
-          <MemoizedStarsAnimation />
-        </motion.div>
-        
+      <div className="flex flex-col items-center justify-center min-h-screen px-4 md:px-8 py-10 md:py-20">
         {/* Main content */}
-        <div className="z-10 max-w-3xl w-full text-center mt-20">
-          {/* Main headline */}
-    
+        <div className="z-10 w-full max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-start justify-between gap-8 md:gap-4">
+          {/* Left side - title and subtitle */}
+          <div className="w-full md:w-1/2 text-center md:text-left flex flex-col justify-center">
+            {/* Main headline */}
             <motion.h1 
-              className="text-2xl md:text-5xl lg:text-6xl font-extrabold mb-8 tracking-tight"
+              className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 tracking-tight uppercase"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-            <HyperText>
-                It&apos;s time to measure what matters.
+              <HyperText>
+                Bringing clarity to good intentions
               </HyperText>
             </motion.h1>
-          
-          
-          {/* Rotating prompts with typewriter effect - FIXED HEIGHT */}
-          <div className="h-16 mb-10 flex items-center justify-center">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={currentPromptIndex}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                transition={{ duration: 0.5 }}
-                className="text-sm md:text-base font-normal text-[#F7CACA]/70 prompt-text"
+            
+            {/* Subtext */}
+            <motion.p
+              className="text-sm md:text-base text-white/70 mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              By providing tools to identify, measure and monitor impact
+            </motion.p>
+            
+            {/* Primary CTA Button */}
+            <motion.div
+              className="mx-auto md:mx-0"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+              animate={{ 
+                boxShadow: ["0 0 0 0 rgba(247, 202, 202, 0)", "0 0 20px 5px rgba(247, 202, 202, 0.3)", "0 0 0 0 rgba(247, 202, 202, 0)"]
+              }}
+              transition={{
+                boxShadow: {
+                  duration: 2,
+                  repeat: Infinity,
+                  repeatType: "loop"
+                }
+              }}
+            >
+              <Button 
+                className="bg-[#F7CACA] hover:bg-[#F7CACA]/90 text-[#111] px-6 py-3 sm:py-4 text-sm sm:text-base font-medium rounded-full"
+                onClick={handleMeasureClick}
               >
-                <TypingPrompt prompt={prompts[currentPromptIndex]} />
-              </motion.div>
-            </AnimatePresence>
+                Measure My Impact
+              </Button>
+            </motion.div>
           </div>
           
-          {/* Primary CTA Button - SMALLER TEXT */}
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.98 }}
-            animate={{ 
-              boxShadow: ["0 0 0 0 rgba(247, 202, 202, 0)", "0 0 20px 5px rgba(247, 202, 202, 0.3)", "0 0 0 0 rgba(247, 202, 202, 0)"]
-            }}
-            transition={{
-              boxShadow: {
-                duration: 2,
-                repeat: Infinity,
-                repeatType: "loop"
-              }
-            }}
-          >
-            <Button 
-              className="bg-[#F7CACA] hover:bg-[#F7CACA]/90 text-[#111] px-6 py-4 text-base font-medium rounded-full"
-              onClick={handleMeasureClick}
+          {/* Right side - Earth image and prompts */}
+          <div className="w-full md:w-1/2 flex flex-col items-center">
+            {/* Earth image */}
+            <motion.div 
+              className="flex justify-center items-center mb-2"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              Measure My Impact
-            </Button>
-          </motion.div>
-          
-          {/* Secondary link 
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1, duration: 1 }}
-            className="mt-8"
-          >
-            <Link 
-              href="/start" 
-              className="text-white/70 hover:text-[#F7CACA] transition-colors text-sm underline underline-offset-4"
-            >
-              Join the waitlist
-            </Link>
-          </motion.div>
-          */}
+              <div className="relative w-60 h-60 sm:w-72 sm:h-72 md:w-80 md:h-80">
+                <Image
+                  src="/earth.png"
+                  alt="Earth"
+                  fill
+                  sizes="(max-width: 640px) 240px, (max-width: 768px) 288px, 320px"
+                  priority
+                  className="object-contain"
+                  style={{
+                    filter: "drop-shadow(0 0 20px rgba(67, 190, 255, 0.3))"
+                  }}
+                />
+              </div>
+            </motion.div>
+
+            {/* Rotating prompts below the earth image */}
+            <div className="h-8 flex items-center justify-center w-full text-center">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentPromptIndex}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.5 }}
+                  className="text-[10px] sm:text-xs font-normal text-[#F7CACA]/60 prompt-text tracking-wide"
+                >
+                  <TypingPrompt 
+                    prompt={prompts[currentPromptIndex]} 
+                  />
+                </motion.div>
+              </AnimatePresence>
+            </div>
+          </div>
         </div>
       </div>
 
       {/* Navigation */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
+      <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-10">
         <Navigation />
       </div>
     </div>

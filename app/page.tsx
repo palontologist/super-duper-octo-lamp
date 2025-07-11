@@ -1,46 +1,13 @@
 "use client"
 
-import React, { useState, useEffect, useCallback, memo } from 'react';
+import React, { useCallback } from 'react';
 import { Button } from "@/components/ui/button"
-import { TypingAnimation } from "@/components/magicui/typing-animation";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { Navigation } from "@/components/ui/navigation";
 import { HyperText } from "@/components/magicui/hyper-text";
 import Image from "next/image";
 
-// Memoized TypingPrompt component
-const TypingPrompt = memo(({ prompt }: { prompt: string }) => {
-  return (
-    <TypingAnimation 
-      className="inline-block prompt-text"
-      duration={50}
-    >
-      {prompt}
-    </TypingAnimation>
-  );
-});
-
-TypingPrompt.displayName = 'TypingPrompt';
-
 export default function Page() {
-  const [currentPromptIndex, setCurrentPromptIndex] = useState(0);
-  
-  const prompts = [
-    "Good intentions are not enough.",
-    "You bike to work — how much CO₂ did you avoid?",
-    "I'm doing my part — really? Let's see.",
-    "I recycle - but do you know the impact",
-    "Every action counts. Ready to prove it?"
-  ];
-  
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentPromptIndex((prevIndex) => (prevIndex + 1) % prompts.length);
-    }, 5000);
-    
-    return () => clearInterval(interval);
-  }, [prompts.length]);
-  
   // Use useCallback for event handlers
   const handleMeasureClick = useCallback(() => {
     window.open("/measure", "_self");
@@ -109,7 +76,7 @@ export default function Page() {
             </motion.div>
           </div>
           
-          {/* Right side - Earth image and prompts */}
+          {/* Right side - Earth image */}
           <div className="w-full md:w-1/2 flex flex-col items-center">
             {/* Earth image */}
             <motion.div 
@@ -132,25 +99,6 @@ export default function Page() {
                 />
               </div>
             </motion.div>
-
-            {/* Commented out: Rotating prompts below the earth image 
-            <div className="h-8 flex items-center justify-center w-full text-center">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={currentPromptIndex}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  transition={{ duration: 0.5 }}
-                  className="text-[10px] sm:text-xs font-normal text-[#F7CACA]/60 prompt-text tracking-wide"
-                >
-                  <TypingPrompt 
-                    prompt={prompts[currentPromptIndex]} 
-                  />
-                </motion.div>
-              </AnimatePresence>
-            </div>
-            */}
           </div>
         </div>
       </div>

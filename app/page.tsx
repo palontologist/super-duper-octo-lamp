@@ -51,29 +51,7 @@ export default function Page() {
               By providing tools to identify, measure and monitor impact
             </motion.p>
             
-            {/* Primary CTA Button */}
-            <motion.div
-              className="mx-auto md:mx-0"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
-              animate={{ 
-                boxShadow: ["0 0 0 0 rgba(247, 202, 202, 0)", "0 0 20px 5px rgba(247, 202, 202, 0.3)", "0 0 0 0 rgba(247, 202, 202, 0)"]
-              }}
-              transition={{
-                boxShadow: {
-                  duration: 2,
-                  repeat: Infinity,
-                  repeatType: "loop"
-                }
-              }}
-            >
-              <Button 
-                className="bg-[#F7CACA] hover:bg-[#F7CACA]/90 text-[#111] px-6 py-3 sm:py-4 text-sm sm:text-base font-medium rounded-full"
-                onClick={handleMeasureClick}
-              >
-                Measure My Impact
-              </Button>
-            </motion.div>
+         
           </div>
           
           {/* Right side - Earth image */}

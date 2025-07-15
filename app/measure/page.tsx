@@ -82,15 +82,24 @@ export default function Page() {
             </div>
 
           {/* "Learn More" Button */}
-          <Button
-            variant="outline"
-            className="bg-transparent border-gray-700 text-gray-300 hover:bg-gray-800 hover:text-white h-12 px-6 w-full sm:w-auto"
-            asChild
-          >
-            <Link href="https://sourcia.ai/agent-george" target="_blank" rel="noopener noreferrer">
-              Learn More
-            </Link>
-          </Button>
+          <div className="w-full sm:w-auto flex">
+            <Button
+              variant="outline"
+              className="bg-transparent border-gray-700 text-gray-300 hover:bg-gray-800 hover:text-white h-12 px-6 w-full sm:w-auto focus-visible:ring-2 focus-visible:ring-teal-400 focus-visible:ring-offset-2"
+              asChild
+            >
+              <Link
+                href="https://sourcia.ai/agent-george"
+                target="_blank"
+                rel="noopener noreferrer"
+                tabIndex={0}
+                aria-label="Learn more about our approach (opens in a new tab)"
+                className="w-full flex items-center justify-center"
+              >
+                Learn More
+              </Link>
+            </Button>
+          </div>
         </motion.div>
                     </motion.div>
 

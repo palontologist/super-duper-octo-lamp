@@ -1,7 +1,7 @@
 "use client"
 
-import React, { useCallback } from 'react';
-import { Button } from "@/components/ui/button"
+// import React, { useCallback } from 'react';
+// import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion";
 import { Navigation } from "@/components/ui/navigation";
 import { HyperText } from "@/components/magicui/hyper-text";
@@ -9,9 +9,9 @@ import Image from "next/image";
 
 export default function Page() {
   // Use useCallback for event handlers
-  const handleMeasureClick = useCallback(() => {
-    window.open("/measure", "_self");
-  }, []);
+ // const handleMeasureClick = useCallback(() => {
+ //   window.open("/measure", "_self");
+ // }, []);
   
   return (
     <div className="min-h-screen bg-[#111] relative overflow-hidden">

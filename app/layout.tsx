@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ClientWrapper } from "@/components/ui/client-wrapper";
 import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 // Optimize font loading
 const geistSans = Geist({
@@ -43,6 +44,7 @@ export default function RootLayout({
           {children}
         </ClientWrapper>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

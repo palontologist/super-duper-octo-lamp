@@ -5,7 +5,7 @@
 import { motion } from "framer-motion";
 import { Navigation } from "@/components/ui/navigation";
 import { HyperText } from "@/components/magicui/hyper-text";
-import Image from "next/image";
+//import Image from "next/image";
 
 export default function Page() {
   // Use useCallback for event handlers
@@ -31,13 +31,13 @@ export default function Page() {
           <div className="w-full md:w-1/2 text-center md:text-left flex flex-col justify-center">
             {/* Main headline */}
             <motion.h1 
-              className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 tracking-tight uppercase"
+              className="text-8xl md:text-4xl lg:text-5xl font-extrabold mb-4 tracking-tight uppercase"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
               <HyperText>
-                Bringing clarity to good intentions
+               The unified platform to measure your total impact
               </HyperText>
             </motion.h1>
             
@@ -48,15 +48,15 @@ export default function Page() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              By providing tools to identify, measure and monitor impact
+             From carbon footprint to community action.
             </motion.p>
             
          
           </div>
-          
-          {/* Right side - Earth image */}
+          {/* Right side - Earth image */} 
+          {/*
           <div className="w-full md:w-1/2 flex flex-col items-center">
-            {/* Earth image */}
+           
             <motion.div 
               className="flex justify-center items-center"
               initial={{ opacity: 0, scale: 0.95 }}
@@ -78,6 +78,7 @@ export default function Page() {
               </div>
             </motion.div>
           </div>
+          */}
         </div>
       </div>
 

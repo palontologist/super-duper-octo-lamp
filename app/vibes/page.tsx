@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, memo, useCallback, useMemo } from "react";
+import { useState, memo, useCallback, useMemo, useEffect } from "react";
 import { Navigation } from "@/components/ui/navigation";
+import { StickyBanner } from "@/components/ui/sticky-banner";
 
 // Podcast data with the requested YouTube videos
 const podcastEpisodes = [
@@ -137,11 +138,36 @@ export default function VibesPage() {
   const handleEpisodeChange = useCallback((index: number) => {
     setCurrentEpisode(index);
   }, []);
+
+  // Auto-advance functionality - move to next video every 3 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentEpisode((prevEpisode) => (prevEpisode + 1) % podcastEpisodes.length);
+    }, 3000); // 3 seconds
+
+    // Cleanup interval on component unmount or when currentEpisode changes
+    return () => clearInterval(interval);
+  }, []); // Empty dependency array means this effect runs once on mount
   
   return (
     <div className="min-h-screen bg-black flex flex-col justify-between overflow-x-hidden">
+        <StickyBanner className="bg-gradient-to-b from-blue-500 to-blue-600">
+        <p className="mx-0 max-w-[90%] text-white drop-shadow-md">
+          Subscribe to our monthly newsletter for insights on impact measurement and sustainability.{" "}
+          <a 
+            href="https://21givenchy.substack.com/p/the-rise-of-impact-investment-what" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="transition duration-200 hover:underline font-semibold"
+          >
+            Read our July collaboration with defemagency.com
+          </a>
+        </p>
+      </StickyBanner>
       <main className="flex-grow flex items-center py-8 sm:py-12">
+          
         <div className="container mx-auto px-4 flex flex-col md:flex-row items-center gap-8 md:gap-4">
+           
           {/* Left section - Podcast video embed */}
           <div className="w-full md:w-1/2 flex items-center justify-center">
             <VideoPlayer 
@@ -160,12 +186,12 @@ export default function VibesPage() {
               currentEpisode={currentEpisode}
               onChange={handleEpisodeChange}
             />
-              </div>
+          </div>
         </div>
       </main>
 
       {/* Navigation - Similar to other pages */}
       <Navigation />
-      </div>
+    </div>
   );
 }

@@ -61,19 +61,18 @@ export default function Page() {
 
   return (
     <div className="min-h-screen bg-black relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0">
-        {/* Large background number */}
-        <div className="absolute right-1/4 top-1/4 text-9xl font-bold text-white/5 select-none">
-          05
-        </div>
-        
-        {/* Geometric shapes */}
-        <div className="absolute top-8 right-8 w-16 h-16 border border-blue-400 transform rotate-45 opacity-60"></div>
-        <div className="absolute bottom-8 right-8 w-8 h-8 bg-yellow-400 opacity-80"></div>
-      </div>
-
-      {/* Main content */}
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
+        style={{
+          backgroundImage: "url('/soph.png')"
+        }}
+      />
+      
+      {/* Dark overlay for better text readability */}
+      <div className="absolute inset-0 bg-black/40"></div>
+      
+      {/* Content */}
       <div className="relative z-10 min-h-screen flex flex-col items-center justify-center p-8">
         {/* Header */}
         <motion.div 

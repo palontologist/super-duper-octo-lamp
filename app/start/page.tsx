@@ -51,74 +51,83 @@ export default function Page() {
   };
 
   return (
-    <div className="min-h-screen bg-black flex flex-col justify-between overflow-hidden">
-      {/* Subtle texture overlay */}
-      <div className="absolute inset-0 opacity-5 pointer-events-none" style={{
-        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fillRule='evenodd'%3E%3Cg fill='%23ffffff' fillOpacity='0.1'%3E%3Ccircle cx='7' cy='7' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-      }} />
+    <div className="min-h-screen bg-black flex flex-col justify-between overflow-hidden relative">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
+        style={{
+          backgroundImage: "url('/soph.png')"
+        }}
+      />
+      
+      {/* Dark overlay for better text readability */}
+      <div className="absolute inset-0 bg-black/40"></div>
+      
+      {/* Content */}
+      <div className="relative z-10 flex flex-col justify-between min-h-screen">
+        {/* Main content */}
+        <main className="flex-grow flex items-center justify-center py-6 sm:py-12">
+          <div className="container px-4 mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-6 max-w-6xl mx-auto items-center">
+              {/* Left Column - Personal Impact Tracking */}
+              <motion.div 
+                className="flex flex-col justify-center order-2 lg:order-1"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                <h2 className="text-2xl sm:text-3xl font-medium text-white mb-3">By providing tools to identify, measure and monitor impact</h2>
+                
+                <ul className="space-y-3 text-sm sm:text-base text-gray-300 mb-6">
+                  <li className="flex items-start">
+                    <span className="text-teal-400 mr-2">→</span>
+                    <span>Map daily activities to UN SDGs</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-teal-400 mr-2">→</span>
+                    <span>Track carbon footprint through purchases</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-teal-400 mr-2">→</span>
+                    <span>See your impact grow over time</span>
+                  </li>
+                </ul>
 
-      {/* Main content */}
-      <main className="flex-grow flex items-center justify-center relative z-10 py-6 sm:py-12">
-        <div className="container px-4 mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-6 max-w-6xl mx-auto items-center">
-            {/* Left Column - Personal Impact Tracking */}
-            <motion.div 
-              className="flex flex-col justify-center order-2 lg:order-1"
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <h2 className="text-2xl sm:text-3xl font-medium text-white mb-3">By providing tools to identify, measure and monitor impact</h2>
-              
-              <ul className="space-y-3 text-sm sm:text-base text-gray-300 mb-6">
-                <li className="flex items-start">
-                  <span className="text-teal-400 mr-2">→</span>
-                  <span>Map daily activities to UN SDGs</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-teal-400 mr-2">→</span>
-                  <span>Track carbon footprint through purchases</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-teal-400 mr-2">→</span>
-                  <span>See your impact grow over time</span>
-                </li>
-              </ul>
+                <div className="mb-6 relative">
+                  <WaitlistForm />
+                </div>
+                
+                <CommunityCard onDiscordClick={handleDiscordClick} />
+              </motion.div>
 
-              <div className="mb-6 relative">
-                <WaitlistForm />
-              </div>
-              
-              <CommunityCard onDiscordClick={handleDiscordClick} />
-            </motion.div>
-
-            {/* Right Column - Earth Image */}
-            <motion.div 
-              className="flex justify-center items-center order-1 lg:order-2"
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-            >
-              <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96">
-                <Image
-                  src="/earth.png"
-                  alt="Earth"
-                  fill
-                  sizes="(max-width: 640px) 256px, (max-width: 768px) 320px, 384px"
-                  priority
-                  className="object-contain"
-                  style={{
-                    filter: "drop-shadow(0 0 20px rgba(67, 190, 255, 0.3))"
-                  }}
-                />
-              </div>
-            </motion.div>
+              {/* Right Column - Earth Image */}
+              <motion.div 
+                className="flex justify-center items-center order-1 lg:order-2"
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+              >
+                <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96">
+                  <Image
+                    src="/earth.png"
+                    alt="Earth"
+                    fill
+                    sizes="(max-width: 640px) 256px, (max-width: 768px) 320px, 384px"
+                    priority
+                    className="object-contain"
+                    style={{
+                      filter: "drop-shadow(0 0 20px rgba(67, 190, 255, 0.3))"
+                    }}
+                  />
+                </div>
+              </motion.div>
+            </div>
           </div>
-        </div>
-      </main>
+        </main>
 
-      {/* Navigation */}
-      <Navigation />
+        {/* Navigation */}
+        <Navigation />
+      </div>
     </div>
   );
 }

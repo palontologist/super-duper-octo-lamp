@@ -6,6 +6,7 @@
 import { Navigation } from "@/components/ui/navigation";
 import { WaitlistForm } from "@/components/ui/waitlist-form";
 //import Image from "next/image";
+import { ComicText } from "@/components/magicui/comic-text";
 
 export default function Page() {
   return (
@@ -37,9 +38,9 @@ export default function Page() {
         {/* Right column */}
         <div className="flex-1 flex flex-col items-center justify-center p-4 sm:p-8">
           <div className="flex flex-col items-center w-full max-w-sm sm:max-w-md">
-            <span className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-center mb-6 sm:mb-8 bg-gradient-to-r from-blue-500 via-purple-500 via-teal-400 to-pink-500 bg-clip-text text-transparent">
-              Try it.
-            </span>
+          <div className="space-y-8 text-center">
+                  <ComicText fontSize={5}>TRY IT!</ComicText>
+          </div>
             <p className="text-sm sm:text-base md:text-lg text-white/80 mt-2 sm:mt-4 max-w-xl text-center mb-6 sm:mb-8 px-4">
               It&apos;s free to <a href="https://greta-v1.vercel.app" target="_blank" rel="noopener noreferrer" className="underline text-blue-300 hover:text-blue-400 hover:scale-105 transition-transform duration-200">get started</a> for early access.
             </p>

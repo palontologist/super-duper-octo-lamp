@@ -20,8 +20,8 @@ const geistMono = Geist_Mono({
 
 // Next metadata for SEO
 export const metadata: Metadata = {
-  title: "Sustainability Impact Platform",
-  description: "Track your personal and organizational sustainability impact across UN SDGs",
+  title: "F^3",
+  description: "Virtual Chief Sustainability Officer",
   viewport: "width=device-width, initial-scale=1",
   themeColor: "#111111",
   icons: {

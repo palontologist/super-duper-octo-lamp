@@ -21,7 +21,7 @@ const geistMono = Geist_Mono({
 // Next metadata for SEO
 export const metadata: Metadata = {
   title: "F^3",
-  description: "Virtual Chief Sustainability Officer",
+  description: "The OS for founder focus",
   viewport: "width=device-width, initial-scale=1",
   themeColor: "#111111",
   icons: {

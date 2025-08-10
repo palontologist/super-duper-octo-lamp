@@ -1,9 +1,10 @@
 "use client"
 
 import { WaitlistForm } from "@/components/ui/waitlist-form";
-import { StickyBanner } from "@/components/ui/sticky-banner";
-import { MorphingText } from "@/components/magicui/morphing-text";
+
 import { ComicText } from "@/components/magicui/comic-text";
+
+
 
 export default function Page() {
   return (
@@ -21,38 +22,36 @@ export default function Page() {
       
       {/* Content */}
       <div className="relative z-10 flex flex-col min-h-screen">
-        {/* Sticky Banner */}
-        <StickyBanner className="bg-gradient-to-b from-blue-500 to-blue-600">
-          <p className="mx-0 max-w-[90%] text-white drop-shadow-md">
-            Subscribe to our monthly newsletter for insights on impact measurement and sustainability.{" "}
-            <a 
-              href="https://21givenchy.substack.com/p/the-rise-of-impact-investment-what" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="transition duration-200 hover:underline font-semibold"
-            >
-              Read our July collaboration with defemagency.com
-            </a>
-          </p>
-        </StickyBanner>
+ 
         
         {/* Main content area */}
         <div className="flex-1 flex flex-col items-center justify-center p-4 sm:p-8 pb-24 sm:pb-32 pt-24">
           <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold text-center text-white mb-4 sm:mb-6">
-            The OS for <span className="inline-block mx-4"><MorphingText texts={["Founders", "Experts" , "Students", "Teams"]} /></span> <span className="ml-26">Focus.</span>
+           Your focus is broken.
           </h1>
           
           <p className="text-base sm:text-lg md:text-2xl text-center text-white/80 max-w-2xl px-4 mb-8 sm:mb-12">
             Align your daily actions with your core mission.
           </p>
-          
+          <p className="mx-auto max-w-[70ch] text-left text-white/80 text-sm sm:text-base md:text-lg leading-7 md:leading-8 px-4">
+            As a founder, you're constantly pulled in a dozen directions.
+            <p> The tools we're forced to use—our calendars, notes, and chats—are just a list of tasks. </p>
+             <p> They show us what we're doing, but they have no idea what we're trying to achieve.
+              </p>
+              They aren't aligned with our ambition.
+              <p> Greta is the first tool of it's kind to connect every meeting, every task, and every idea back to your North Star.
+                <p> It’s the clarity you need to confidently say "no" to distractions and "yes" to building your future</p>
+              </p>
+          </p>
           {/* Try it section */}
           <div className="space-y-8 text-center mb-8">
-            <ComicText fontSize={5}>TRY IT!</ComicText>
+            <ComicText fontSize={2}>Join the Founder's Circle!</ComicText>
           </div>
           
           <p className="text-sm sm:text-base md:text-lg text-white/80 max-w-xl text-center mb-8 px-4">
-            It&apos;s free to get started for early access.
+          It’s $15/month, billed annually ($180). 
+         <p> This charter price is locked in for life for our first 20 members, and includes a 30-minute personal onboarding call with me to set up your North Star. </p>
+          The standard price will be $25/month.
           </p>
           
           {/* Waitlist Form */}

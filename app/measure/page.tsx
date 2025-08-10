@@ -12,20 +12,20 @@ export default function Page() {
 
   const storySteps = [
     {
-      title: "The Beginning",
-      content: "It all started with a simple question: \"What is my real impact?\" I was volunteering and trying to make conscious choices, but the results felt invisible. So, I built the first version of our tool to solve this for myself."
+      title: "The Mission",
+      content: "I'm building frontforumfocus to navigate my own distractions. Aligning my daily actions [podcasting, side projects and hosting founder events] to my one core mission and deepest ambitions: connecting with builders to create tech that matters."
     },
     {
-      title: "The Problem",
-      content: "Your team already has good intentions. You choose sustainable suppliers, you encourage volunteering, you build products that make a difference. But that impact is often invisible, trapped in disconnected reports and spreadsheets."
+      title: "The Challenge",
+      content: "Every day, we're pulled in countless directions. Good intentions get lost in the noise of urgent tasks, side projects, and endless opportunities. But what if we could see how every action connects to our core mission?"
     },
     {
-      title: "The Solution",
-      content: "I built frontforumfocus because I faced this exact problem. I wanted a single source of truth where individual actions and enterprise strategy combine to tell one complete, credible story of impact."
+      title: "The Vision",
+      content: "frontforumfocus isn't just another productivity tool. It's a way to measure what truly matters - the impact of our daily choices on our deepest ambitions. When we can see the connection between today's actions and tomorrow's impact, everything changes."
     },
     {
-      title: "The Future",
-      content: "I'm now looking for other mission-aligned organizations to help us shape the future of impact reporting. If you're ready to turn your good intentions into credible, unified data, we want to partner with you."
+      title: "Join the Journey",
+      content: "I'm looking for other builders who want to turn their scattered efforts into focused impact. If you're ready to align your daily actions with your core mission, let's build something that matters together."
     }
   ];
 
@@ -95,10 +95,10 @@ export default function Page() {
         </motion.div>
 
         {/* Cards Container */}
-        <div className="flex flex-col lg:flex-row gap-4 sm:gap-8 max-w-6xl w-full px-4">
-          {/* Left Card - Story */}
+        <div className="max-w-4xl w-full px-4">
+          {/* Single Card - Story */}
           <motion.div 
-            className="flex-1 bg-gray-100 rounded-2xl p-4 sm:p-8 shadow-xl relative"
+            className="bg-gray-100 rounded-2xl p-4 sm:p-8 shadow-xl relative"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
@@ -133,7 +133,7 @@ export default function Page() {
             </motion.p>
 
             {/* Pagination */}
-            <div className="flex justify-between items-center">
+            <div className="flex justify-between items-center mb-6">
               <div className="flex gap-2">
                 <button 
                   onClick={handlePrev}
@@ -160,36 +160,12 @@ export default function Page() {
                 ))}
               </div>
             </div>
-          </motion.div>
-
-          {/* Right Card - Early Access */}
-          <motion.div 
-            className="flex-1 bg-gray-900 rounded-2xl p-4 sm:p-8 shadow-xl border border-gray-800"
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            <motion.div className="text-center mb-6 sm:mb-8" variants={itemVariants}>
-              <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">Get early access.</h2>
-              <p className="text-sm sm:text-base text-gray-300">It&apos;s free to get started. Let&apos;s measure what matters, together.</p>
-            </motion.div>
-
-            {/* Waitlist Form */}
-            <motion.div className="mb-6" variants={itemVariants}>
-              <WaitlistForm
-                buttonText="Get Onboarded"
-                placeholder="you@company.com"
-                inputClassName="bg-gray-800 border-gray-700 text-white h-10 sm:h-12 rounded-lg flex-grow min-w-0 text-sm sm:text-base"
-                buttonClassName="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white h-10 sm:h-12 px-4 sm:px-6 font-semibold rounded-lg whitespace-nowrap text-sm sm:text-base"
-                successMessage="We'll contact you soon!"
-              />
-            </motion.div>
 
             {/* Learn More Button */}
             <motion.div className="w-full flex justify-center" variants={itemVariants}>
               <Button
                 variant="outline"
-                className="bg-transparent border-gray-700 text-gray-300 hover:bg-gray-800 hover:text-white h-10 sm:h-12 px-4 sm:px-6 w-full focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 rounded-lg text-sm sm:text-base"
+                className="bg-transparent border-gray-700 text-gray-600 hover:bg-gray-200 hover:text-gray-800 h-10 sm:h-12 px-4 sm:px-6 w-full focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 rounded-lg text-sm sm:text-base"
                 asChild
               >
                 <Link

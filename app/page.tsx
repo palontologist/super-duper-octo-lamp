@@ -1,11 +1,7 @@
 "use client"
 
-// import React, { useCallback } from 'react';
-// import { Button } from "@/components/ui/button"
-// import { StickyBanner } from "@/components/ui/sticky-banner";
-import { Navigation } from "@/components/ui/navigation";
 import { WaitlistForm } from "@/components/ui/waitlist-form";
-//import Image from "next/image";
+import { StickyBanner } from "@/components/ui/sticky-banner";
 import { MorphingText } from "@/components/magicui/morphing-text";
 import { ComicText } from "@/components/magicui/comic-text";
 
@@ -25,8 +21,23 @@ export default function Page() {
       
       {/* Content */}
       <div className="relative z-10 flex flex-col min-h-screen">
+        {/* Sticky Banner */}
+        <StickyBanner className="bg-gradient-to-b from-blue-500 to-blue-600">
+          <p className="mx-0 max-w-[90%] text-white drop-shadow-md">
+            Subscribe to our monthly newsletter for insights on impact measurement and sustainability.{" "}
+            <a 
+              href="https://21givenchy.substack.com/p/the-rise-of-impact-investment-what" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="transition duration-200 hover:underline font-semibold"
+            >
+              Read our July collaboration with defemagency.com
+            </a>
+          </p>
+        </StickyBanner>
+        
         {/* Main content area */}
-        <div className="flex-1 flex flex-col items-center justify-center p-4 sm:p-8 pb-24 sm:pb-32">
+        <div className="flex-1 flex flex-col items-center justify-center p-4 sm:p-8 pb-24 sm:pb-32 pt-24">
           <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold text-center text-white mb-4 sm:mb-6">
             The OS for <span className="inline-block mx-4"><MorphingText texts={["Founders", "Experts" , "Students", "Teams"]} /></span> <span className="ml-26">Focus.</span>
           </h1>
@@ -55,11 +66,6 @@ export default function Page() {
             />
           </div>
         </div>
-      </div>
-      
-      {/* Navigation */}
-      <div className="fixed bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-20">
-        <Navigation />
       </div>
     </div>
   )

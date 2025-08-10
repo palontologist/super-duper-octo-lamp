@@ -38,6 +38,7 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <head>
         <link rel="icon" href="/s.png" />
+        <meta name="google-adsense-account" content="ca-pub-5890845623424973" />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#111] text-white`}>
         <ClientWrapper>

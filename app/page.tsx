@@ -1,7 +1,7 @@
 "use client"
 
 import { WaitlistForm } from "@/components/ui/waitlist-form";
-
+import Image from "next/image";
 import { ComicText } from "@/components/magicui/comic-text";
 
 
@@ -33,7 +33,39 @@ export default function Page() {
           <p className="text-base sm:text-lg md:text-2xl text-center text-white/80 max-w-2xl px-4 mb-8 sm:mb-12">
             Align your daily actions with your core mission.
           </p>
-
+          <div className="w-full max-w-5xl mx-auto">
+            <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur p-3 sm:p-4">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 md:gap-6">
+                <Image
+                  src="/mm.png"
+                  alt="Step 1 screenshot"
+                  width={240}
+                  height={480}
+                  className="rounded-xl ring-1 ring-white/10 shadow-lg object-cover w-40 sm:w-48 md:w-60 h-auto"
+                  sizes="(max-width: 640px) 33vw, (max-width: 1024px) 25vw, 20vw"
+                  priority={false}
+                />
+                <Image
+                  src="/n.png"
+                  alt="Step 2 screenshot"
+                  width={240}
+                  height={480}
+                  className="rounded-xl ring-1 ring-white/10 shadow-lg object-cover w-40 sm:w-48 md:w-60 h-auto"
+                  sizes="(max-width: 640px) 33vw, (max-width: 1024px) 25vw, 20vw"
+                  priority={false}
+                />
+                <Image
+                  src="/nn.png"
+                  alt="Step 3 screenshot"
+                  width={240}
+                  height={480}
+                  className="rounded-xl ring-1 ring-white/10 shadow-lg object-cover w-40 sm:w-48 md:w-60 h-auto"
+                  sizes="(max-width: 640px) 33vw, (max-width: 1024px) 25vw, 20vw"
+                  priority={false}
+                />
+              </div>
+            </div>
+          </div>
           {/* Narrative paragraphs (no nested <p>) */}
           <p className="mx-auto max-w-[70ch] text-left text-white/80 text-sm sm:text-base md:text-lg leading-7 md:leading-8 px-4">
             As a founder, you&apos;re constantly pulled in a dozen directions.

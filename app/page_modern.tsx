@@ -2,8 +2,8 @@
 
 import { WaitlistForm } from "@/components/ui/waitlist-form";
 import Image from "next/image";
-import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
+import { ComicText } from "@/components/magicui/comic-text";
 
 // Trust indicators component
 const TrustIndicators = () => (

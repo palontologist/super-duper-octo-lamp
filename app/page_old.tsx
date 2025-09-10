@@ -4,25 +4,41 @@ import { WaitlistForm } from "@/components/ui/waitlist-form";
 import Image from "next/image";
 import { ComicText } from "@/components/magicui/comic-text";
 import { motion } from "framer-motion";
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
 
 
+/* eslint-disable @typescript-eslint/no-unused-vars */
 
 // Trust indicators component
 const TrustIndicators = () => (
-  <motion.div 
-    className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 opacity-60 mb-12"
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 0.6, y: 0 }}
-    transition={{ delay: 0.8, duration: 0.6 }}
-  >
-    <div className="text-white/60 text-xs sm:text-sm font-medium">Trusted by 500+ founders</div>
-    <div className="w-1 h-1 bg-white/30 rounded-full"></div>
-    <div className="text-white/60 text-xs sm:text-sm font-medium">YC-backed companies</div>
-    <div className="w-1 h-1 bg-white/30 rounded-full"></div>
-    <div className="text-white/60 text-xs sm:text-sm font-medium">14-day free trial</div>
-  </motion.div>
+  <div className="flex flex-wrap justify-center items-center gap-8 mb-16 opacity-60">
+    <div className="text-sm text-gray-400">Trusted by 500+ founders</div>
+    <div className="w-1 h-1 bg-gray-600 rounded-full"></div>
+    <div className="text-sm text-gray-400">Y Combinator backed</div>
+    <div className="w-1 h-1 bg-gray-600 rounded-full"></div>
+    <div className="text-sm text-gray-400">SOC 2 compliant</div>
+  </div>
+);
+
+// Memoized component definitions
+const HeaderSection = () => (
+  <header className="text-center mb-16">
+    <motion.h1 
+      className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6"
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, delay: 0.2 }}
+    >
+      FOCUS
+    </motion.h1>
+    <motion.p 
+      className="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto leading-relaxed"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, delay: 0.4 }}
+    >
+      The platform where founders connect purpose with measurable impact
+    </motion.p>
+  </header>
 );
 
 // Feature highlight component
@@ -57,13 +73,12 @@ const TestimonialCard = () => (
       </div>
     </div>
     <p className="text-white/80 text-sm italic leading-relaxed">
-      "Finally, a tool that connects my daily chaos to my bigger vision. It's like having a personal coach for focus."
+      &quot;Finally, a tool that connects my daily chaos to my bigger vision. It&apos;s like having a personal coach for focus.&quot;
     </p>
   </motion.div>
 );
 
 export default function Page() {
-  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   return (
     <div className="min-h-screen bg-[#111] flex flex-col relative">
       {/* Background Image */}

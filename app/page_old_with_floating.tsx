@@ -1,7 +1,9 @@
 "use client"
 
 import { WaitlistForm } from "@/components/ui/waitlist-form";
+import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 // Draggable floating element component
 interface DraggableElementProps {

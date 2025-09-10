@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { memo } from "react";
-import { Navigation } from "@/components/ui/navigation";
 import { WaitlistForm } from "@/components/ui/waitlist-form";
 
 // Community card component
@@ -126,7 +125,7 @@ export default function Page() {
         </main>
 
         {/* Navigation */}
-        <Navigation />
+        {/* Navigation is now handled globally in ClientWrapper */}
       </div>
     </div>
   );

@@ -1,115 +1,195 @@
 "use client"
 
 import { WaitlistForm } from "@/components/ui/waitlist-form";
-import Image from "next/image";
-import { ComicText } from "@/components/magicui/comic-text";
-
-
+import { motion } from "framer-motion";
 
 export default function Page() {
   return (
-    <div className="min-h-screen bg-[#111] flex flex-col relative">
-      {/* Background Image */}
+    <div className="relative min-h-screen overflow-hidden font-[family-name:var(--font-poppins)]" style={{ backgroundColor: "#60a5fa" }}>
+      {/* Blue Sky Background */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
+        className="absolute inset-0 w-full h-full bg-cover bg-center"
         style={{
-          backgroundImage: "url('/soph.png')"
+          backgroundImage: "url('/soph.png')",
+          backgroundColor: "#60a5fa"
         }}
       />
       
-      {/* Dark overlay for better text readability */}
-      <div className="absolute inset-0 bg-black/40"></div>
-      
-      {/* Content */}
-      <div className="relative z-10 flex flex-col min-h-screen">
- 
-        
-        {/* Main content area */}
-        <div className="flex-1 flex flex-col items-center justify-center p-4 sm:p-8 pb-24 sm:pb-32 pt-24">
-          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold text-center text-white mb-4 sm:mb-6">
-           Your focus is broken.
-          </h1>
-          
-          <p className="text-base sm:text-lg md:text-2xl text-center text-white/80 max-w-2xl px-4 mb-8 sm:mb-12">
-            Align your daily actions with your core mission.
-          </p>
-          <div className="w-full max-w-5xl mx-auto">
-            <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur p-3 sm:p-4">
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 md:gap-6">
-                <Image
-                  src="/mm.png"
-                  alt="Step 1 screenshot"
-                  width={240}
-                  height={480}
-                  className="rounded-xl ring-1 ring-white/10 shadow-lg object-cover w-40 sm:w-48 md:w-60 h-auto"
-                  sizes="(max-width: 640px) 33vw, (max-width: 1024px) 25vw, 20vw"
-                  priority={false}
-                />
-                <Image
-                  src="/n.png"
-                  alt="Step 2 screenshot"
-                  width={240}
-                  height={480}
-                  className="rounded-xl ring-1 ring-white/10 shadow-lg object-cover w-40 sm:w-48 md:w-60 h-auto"
-                  sizes="(max-width: 640px) 33vw, (max-width: 1024px) 25vw, 20vw"
-                  priority={false}
-                />
-                <Image
-                  src="/nn.png"
-                  alt="Step 3 screenshot"
-                  width={240}
-                  height={480}
-                  className="rounded-xl ring-1 ring-white/10 shadow-lg object-cover w-40 sm:w-48 md:w-60 h-auto"
-                  sizes="(max-width: 640px) 33vw, (max-width: 1024px) 25vw, 20vw"
-                  priority={false}
-                />
-              </div>
-            </div>
-          </div>
-          {/* Narrative paragraphs (no nested <p>) */}
-          <p className="mx-auto max-w-[70ch] text-left text-white/80 text-sm sm:text-base md:text-lg leading-7 md:leading-8 px-4">
-            As a founder, you&apos;re constantly pulled in a dozen directions.
-          </p>
-          <p className="mx-auto max-w-[70ch] text-left text-white/80 text-sm sm:text-base md:text-lg leading-7 md:leading-8 px-4 mt-3">
-            The tools we&apos;re forced to use—our calendars, notes, and chats—are just a list of tasks.
-          </p>
-          <p className="mx-auto max-w-[70ch] text-left text-white/80 text-sm sm:text-base md:text-lg leading-7 md:leading-8 px-4 mt-3">
-            They show us what we&apos;re doing, but they have no idea what we&apos;re trying to achieve.
-          </p>
-          <p className="mx-auto max-w-[70ch] text-left text-white/80 text-sm sm:text-base md:text-lg leading-7 md:leading-8 px-4 mt-3">
-            They aren&apos;t aligned with our ambition.
-          </p>
-          <p className="mx-auto max-w-[70ch] text-left text-white/80 text-sm sm:text-base md:text-lg leading-7 md:leading-8 px-4 mt-3">
-            Greta is the first tool of its kind to connect every meeting, every task, and every idea back to your North Star.
-          </p>
-          <p className="mx-auto max-w-[70ch] text-left text-white/80 text-sm sm:text-base md:text-lg leading-7 md:leading-8 px-4 mt-3">
-            It’s the clarity you need to confidently say &quot;no&quot; to distractions and &quot;yes&quot; to building your future.
-          </p>
+      {/* Blue overlay */}
+      <div className="absolute inset-0 bg-blue-400 opacity-50"></div>
 
-          {/* Try it section */}
-          <div className="space-y-8 text-center mb-8">
-            <ComicText fontSize={2}>Join the Founder&apos;s Circle!</ComicText>
-          </div>
+      {/* Main Hero Section */}
+      <main className="relative z-10 flex flex-col items-center justify-center text-center text-white min-h-screen">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.3 }}
+          className="space-y-8"
+        >
+          {/* Hero Title - 47px */}
+          <motion.h1 
+            className="font-bold leading-tight"
+            style={{ 
+              fontSize: "47px",
+              fontFamily: "'Arial Black', sans-serif", 
+              textShadow: "2px 2px 4px rgba(0,0,0,0.3)",
+              letterSpacing: "0.1em"
+            }}
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 1.2, delay: 0.5, type: "spring", bounce: 0.3 }}
+          >
+            <motion.span 
+              className="block"
+              initial={{ x: -50, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.7 }}
+            >
+              FRONTFORUM
+            </motion.span>
+            <motion.span 
+              className="block text-blue-200"
+              initial={{ x: 50, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.9 }}
+              style={{ fontSize: "42px" }} // Slightly smaller for visual hierarchy
+            >
+              FOCUS
+            </motion.span>
+          </motion.h1>
           
-          {/* Pricing copy (no nested <p>) */}
-          <div className="text-sm sm:text-base md:text-lg text-white/80 max-w-xl text-center mb-8 px-4 space-y-2">
-            <p>It’s $15/month, billed annually ($180).</p>
-            <p>This charter price is locked in for life for our first 20 members, and includes a 30-minute personal onboarding call with me to set up your North Star.</p>
-            <p>The standard price will be $25/month.</p>
-          </div>
+          {/* Primary Text - 29px - Simple tagline */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 1.2 }}
+          >
+            <motion.p 
+              className="font-semibold text-white/90"
+              style={{ fontSize: "29px", lineHeight: "1.4" }}
+              animate={{ y: [0, -2, 0] }}
+              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+            >
+              The future of founder focus
+            </motion.p>
+          </motion.div>
           
-          {/* Waitlist Form */}
-          <div className="w-full max-w-sm sm:max-w-md">
-            <WaitlistForm
-              buttonText="Get Onboarded"
-              placeholder="you@company.com"
-              inputClassName="bg-gray-800/50 border-gray-700 text-white h-10 sm:h-12 flex-grow min-w-0 text-sm sm:text-base"
-              buttonClassName="bg-teal-500 hover:bg-teal-600 text-white h-10 sm:h-12 px-4 sm:px-6 font-semibold whitespace-nowrap text-sm sm:text-base"
-              successMessage="We'll contact you soon!"
-            />
-          </div>
-        </div>
+          {/* Secondary Text - 18px */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 1.5 }}
+            className="space-y-4"
+          >
+            <motion.p 
+              className="text-white/90 font-medium"
+              style={{ fontSize: "18px", lineHeight: "1.6" }}
+              animate={{ y: [0, -2, 0] }}
+              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+            >
+              Join our community of focused founders
+            </motion.p>
+            
+            {/* Newsletter Form */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 1.8 }}
+              whileHover={{ scale: 1.02 }}
+              className="bg-white/5 backdrop-blur-sm rounded-full p-2 border border-white/10"
+            >
+              <WaitlistForm
+                buttonText="Join Newsletter"
+                placeholder="founder@company.com"
+                inputClassName="bg-white/20 backdrop-blur border-white/30 text-white h-12 w-80 text-base placeholder-white/70 focus:border-white/50 transition-colors rounded-full px-6"
+                buttonClassName="bg-white text-black px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 text-base"
+                successMessage="🚀 Welcome to the community!"
+                className="flex flex-col sm:flex-row items-center gap-4 justify-center"
+              />
+            </motion.div>
+          </motion.div>
+          
+          {/* Tertiary Text - 11px */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 2.2 }}
+            className="space-y-2"
+          >
+            <motion.p 
+              className="text-white/60 font-light tracking-wide"
+              style={{ fontSize: "11px", letterSpacing: "0.1em" }}
+              animate={{ opacity: [0.6, 0.8, 0.6] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            >
+              BUILDING THE FUTURE OF FOUNDER FOCUS
+            </motion.p>
+            <motion.p 
+              className="text-white/50 font-light"
+              style={{ fontSize: "11px" }}
+              animate={{ y: [0, 1, 0] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+            >
+              Trusted by innovative founders worldwide
+            </motion.p>
+          </motion.div>
+        </motion.div>
+      </main>
+
+      {/* Footer */}
+            {/* Footer - Moved higher to avoid taskbar overlap */}
+      <div className="absolute bottom-20 left-0 right-0 z-30">
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 3 }}
+          className="text-center text-white font-bold text-xl"
+        >
+          Connecting purpose with impact
+        </motion.p>
       </div>
+
+      {/* Custom Styles */}
+      <style jsx>{`
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+        
+        /* Typography Ramp */
+        .typography-hero {
+          font-size: 47px;
+          line-height: 1.2;
+        }
+        
+        .typography-primary {
+          font-size: 29px;
+          line-height: 1.4;
+        }
+        
+        .typography-secondary {
+          font-size: 18px;
+          line-height: 1.6;
+        }
+        
+        .typography-tertiary {
+          font-size: 11px;
+          line-height: 1.5;
+          letter-spacing: 0.1em;
+        }
+        
+        /* Responsive Typography */
+        @media (max-width: 768px) {
+          .typography-hero { font-size: 32px; }
+          .typography-primary { font-size: 24px; }
+          .typography-secondary { font-size: 16px; }
+          .typography-tertiary { font-size: 10px; }
+        }
+        
+        @media (max-width: 480px) {
+          .typography-hero { font-size: 28px; }
+          .typography-primary { font-size: 20px; }
+          .typography-secondary { font-size: 14px; }
+          .typography-tertiary { font-size: 9px; }
+        }
+      `}</style>
     </div>
-  )
+  );
 }

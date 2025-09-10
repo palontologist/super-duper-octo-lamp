@@ -3,12 +3,49 @@
 import { useState, useEffect } from "react";
 import { LoadingCurtain } from "@/components/magicui/loading-curtain";
 import { SpinningText } from "@/components/magicui/spinning-text";
+import { Navigation } from "@/components/ui/navigation";
 
 // Separate HeaderLogo component that could be potentially shared
 const HeaderLogo = () => (
   <div className="fixed top-6 right-6 text-right z-50 p-4 rounded-full bg-[#111]/70 backdrop-blur-md shadow-lg">
     <SpinningText className="text-white opacity-90 font-medium" radius={3.5}>front • forum • focus •</SpinningText>
   </div>
+);
+
+// Global Navigation Bar
+const GlobalNavbar = () => (
+  <nav className="fixed top-0 left-0 right-0 z-40 bg-transparent backdrop-blur-sm border-b border-white/10">
+    <div className="container mx-auto px-6 py-4">
+      <div className="flex justify-between items-center">
+        {/* Empty left space - removed frontforumfocus text */}
+        <div className="flex items-center">
+          {/* Logo space removed as requested */}
+        </div>
+        
+        {/* Navigation Links */}
+        <div className="hidden md:block">
+          <Navigation />
+        </div>
+        
+        {/* Try Now Button */}
+        <div className="flex items-center">
+          <a 
+            href="https://greta-v2.vercel.app" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="bg-white text-black px-6 py-2 rounded-full font-semibold hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 text-sm"
+          >
+            Try Now
+          </a>
+        </div>
+      </div>
+      
+      {/* Mobile Navigation */}
+      <div className="md:hidden mt-4 pb-2">
+        <Navigation />
+      </div>
+    </div>
+  </nav>
 );
 
 export function ClientWrapper({ children }: { children: React.ReactNode }) {
@@ -29,7 +66,11 @@ export function ClientWrapper({ children }: { children: React.ReactNode }) {
         <LoadingCurtain onLoadingComplete={handleLoadingComplete} />
       )}
       <HeaderLogo />
-      {children}
+      <GlobalNavbar />
+      {/* Add padding-top to account for fixed navbar */}
+      <div className="pt-20 md:pt-24">
+        {children}
+      </div>
     </>
   );
 } 

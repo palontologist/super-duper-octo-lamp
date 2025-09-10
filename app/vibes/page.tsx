@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, memo, useCallback, useMemo, useEffect } from "react";
-import { Navigation } from "@/components/ui/navigation";
 import { StickyBanner } from "@/components/ui/sticky-banner";
 
 // Podcast data with the requested YouTube videos
@@ -203,7 +202,7 @@ export default function VibesPage() {
         </main>
 
         {/* Navigation - Similar to other pages */}
-        <Navigation />
+        {/* Navigation is now handled globally in ClientWrapper */}
       </div>
     </div>
   );

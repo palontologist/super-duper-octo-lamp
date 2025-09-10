@@ -1,6 +1,5 @@
 "use client";
 
-import { WaitlistForm } from "@/components/ui/waitlist-form";
 import Image from "next/image";
 
 export default function Page() {

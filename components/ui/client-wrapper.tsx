@@ -17,9 +17,11 @@ const GlobalNavbar = () => (
   <nav className="fixed top-0 left-0 right-0 z-40 bg-transparent backdrop-blur-sm border-b border-white/10">
     <div className="container mx-auto px-6 py-4">
       <div className="flex justify-between items-center">
-        {/* Empty left space - removed frontforumfocus text */}
+        {/* Logo */}
         <div className="flex items-center">
-          {/* Logo space removed as requested */}
+          <div className="text-3xl font-bold tracking-wider text-white">
+            frontforumfocus
+          </div>
         </div>
         
         {/* Navigation Links */}
@@ -27,15 +29,15 @@ const GlobalNavbar = () => (
           <Navigation />
         </div>
         
-        {/* Try Now Button */}
+        {/* TRY GRETA Button */}
         <div className="flex items-center">
           <a 
             href="https://greta-v2.vercel.app" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="bg-white text-black px-6 py-2 rounded-full font-semibold hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 text-sm"
+            className="px-6 py-2 border border-gray-600 rounded-full text-white hover:bg-gray-800 transition-colors font-medium"
           >
-            Try Now
+            TRY GRETA
           </a>
         </div>
       </div>

@@ -3,6 +3,7 @@
 import { WaitlistForm } from "@/components/ui/waitlist-form";
 import Image from "next/image";
 import { ComicText } from "@/components/magicui/comic-text";
+import { motion } from "framer-motion";
 
 
 
@@ -85,6 +86,236 @@ export default function Page() {
           <p className="mx-auto max-w-[70ch] text-left text-white/80 text-sm sm:text-base md:text-lg leading-7 md:leading-8 px-4 mt-3">
             It’s the clarity you need to confidently say &quot;no&quot; to distractions and &quot;yes&quot; to building your future.
           </p>
+
+          {/* Connect Purpose to Outcomes Section */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="max-w-4xl mx-auto mt-16 mb-16 px-4"
+          >
+            <div className="text-center mb-12">
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+                Connect Purpose to Outcomes
+              </h2>
+              <p className="text-xl md:text-2xl text-white/80 leading-relaxed">
+                Where makers, founders, and ambitious teams align what they do with why they do it—then track, measure, and amplify their impact.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Tools and Community Section */}
+        <motion.section
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="py-20 px-4 sm:px-8"
+        >
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+                Tools and Community
+              </h2>
+              <p className="text-xl text-white/70">
+                Everything you need to transform purpose into measurable impact
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* Greta */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                viewport={{ once: true }}
+                className="bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-8 text-center hover:bg-white/10 transition-all duration-300"
+              >
+                <div className="text-5xl mb-6">🎯</div>
+                <h3 className="text-2xl font-bold text-white mb-4">Greta</h3>
+                <p className="text-white/80 text-lg leading-relaxed">
+                  Your personal mission-alignment app
+                </p>
+                <div className="mt-6">
+                  <button className="bg-teal-500 hover:bg-teal-600 text-white px-6 py-3 rounded-full font-semibold transition-colors">
+                    Try Greta
+                  </button>
+                </div>
+              </motion.div>
+
+              {/* Enterprise Impact Dashboard */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-8 text-center hover:bg-white/10 transition-all duration-300"
+              >
+                <div className="text-5xl mb-6">📊</div>
+                <h3 className="text-2xl font-bold text-white mb-4">Enterprise Impact Dashboard</h3>
+                <p className="text-white/80 text-lg leading-relaxed">
+                  Track and measure organizational alignment at scale
+                </p>
+                <div className="mt-6">
+                  <button className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-full font-semibold transition-colors">
+                    Learn More
+                  </button>
+                </div>
+              </motion.div>
+
+              {/* F³ Podcast */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                viewport={{ once: true }}
+                className="bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-8 text-center hover:bg-white/10 transition-all duration-300"
+              >
+                <div className="text-5xl mb-6">🎙️</div>
+                <h3 className="text-2xl font-bold text-white mb-4">F³ Podcast</h3>
+                <p className="text-white/80 text-lg leading-relaxed">
+                  Conversations that spark
+                </p>
+                <div className="mt-6">
+                  <button className="bg-purple-500 hover:bg-purple-600 text-white px-6 py-3 rounded-full font-semibold transition-colors">
+                    Listen Now
+                  </button>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </motion.section>
+
+        {/* How It Works Section */}
+        <motion.section
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="py-20 px-4 sm:px-8 bg-white/5"
+        >
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+                How It Works
+              </h2>
+              <p className="text-xl text-white/70">
+                Four simple steps to transform your focus
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {/* Step 1 */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                viewport={{ once: true }}
+                className="text-center"
+              >
+                <div className="bg-teal-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
+                  1
+                </div>
+                <h3 className="text-xl font-bold text-white mb-4">Join F³</h3>
+                <p className="text-white/80 leading-relaxed">
+                  Start your journey with our community of focused founders
+                </p>
+              </motion.div>
+
+              {/* Step 2 */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="text-center"
+              >
+                <div className="bg-blue-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
+                  2
+                </div>
+                <h3 className="text-xl font-bold text-white mb-4">Activate your tools</h3>
+                <p className="text-white/80 leading-relaxed">
+                  Set up Greta and connect your existing workflow
+                </p>
+              </motion.div>
+
+              {/* Step 3 */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                viewport={{ once: true }}
+                className="text-center"
+              >
+                <div className="bg-purple-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
+                  3
+                </div>
+                <h3 className="text-xl font-bold text-white mb-4">Track & measure your impact</h3>
+                <p className="text-white/80 leading-relaxed">
+                  See how every action aligns with your North Star
+                </p>
+              </motion.div>
+
+              {/* Step 4 */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                viewport={{ once: true }}
+                className="text-center"
+              >
+                <div className="bg-orange-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
+                  4
+                </div>
+                <h3 className="text-xl font-bold text-white mb-4">Grow, learn, and share</h3>
+                <p className="text-white/80 leading-relaxed">
+                  Connect with the community and amplify your impact
+                </p>
+              </motion.div>
+            </div>
+          </div>
+        </motion.section>
+
+        {/* Final CTA Section */}
+        <div className="flex-1 flex flex-col items-center justify-center p-4 sm:p-8 pb-24 sm:pb-32 pt-24">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="max-w-4xl mx-auto text-center mb-16"
+          >
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-8">
+              Ready to make purpose practical?
+            </h2>
+            
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-teal-500 hover:bg-teal-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 shadow-lg"
+              >
+                Start For Free
+              </motion.button>
+              
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 shadow-lg"
+              >
+                Try Greta
+              </motion.button>
+              
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-purple-500 hover:bg-purple-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 shadow-lg"
+              >
+                Listen to the Podcast
+              </motion.button>
+            </div>
+          </motion.div>
 
           {/* Try it section */}
           <div className="space-y-8 text-center mb-8">

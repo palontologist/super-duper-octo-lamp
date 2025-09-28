@@ -1,106 +1,70 @@
-# Sustainability Impact Tracking Platform
+# FrontForumFocus (F³)
 
-A modern, responsive web application built with Next.js for tracking personal and organizational sustainability impact metrics.
+Founder-first focus and impact platform — a Next.js app that helps founders align daily work with mission and measure meaningful outcomes.
 
-## Project Overview
+## Quick overview
 
-This platform enables users to track their sustainability efforts and measure impact across various UN Sustainable Development Goals (SDGs). The application features a clean, minimalist design with interactive elements and optimized performance.
+- Framework: Next.js 15 (App Router)
+- Language: TypeScript
+- Styling: Tailwind CSS v4 with a dark-first theme
+- Animations: Framer Motion
+- Forms & Validation: React Hook Form + Zod
+- UI primitives: Shadcn UI + custom animated components in `components/magicui`
 
-## Tech Stack
+## What this repo contains
 
-- **Framework**: [Next.js 14](https://nextjs.org/) with App Router
-- **Language**: [TypeScript](https://www.typescriptlang.org/)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **UI Components**: 
-  - [Shadcn UI](https://ui.shadcn.com/)
-  - [Radix UI](https://www.radix-ui.com/)
-- **Animations**: [Framer Motion](https://www.framer.com/motion/)
-- **3D Elements**: [Spline](https://spline.design/)
-- **Form Handling**: 
-  - [React Hook Form](https://react-hook-form.com/)
-  - [Zod](https://zod.dev/) for validation
+- `app/` — Next.js app router pages and API endpoints
+- `components/` — UI and magic UI animated components
+- `public/` — static assets and images
+- `lib/` — small utilities
 
-## Key Features
+## Development
 
-- **Home Page**: Engaging landing page with animated elements and clear call to action
-- **Measure Page**: Impact tracking metrics and onboarding form
-- **Vibes Page**: Community engagement through embedded content
-- **Start Page**: Waitlist registration and SDG tracking information
+1. Copy environment example:
 
-## Getting Started
-
-### Prerequisites
-
-- Node.js 18+ and npm/yarn
-
-### Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/sustainability-impact-platform.git
-   cd sustainability-impact-platform
-   ```
+```bash
+cp env.example .env.local
+```
 
 2. Install dependencies:
+
 ```bash
 npm install
-# or
-   yarn
 ```
 
-3. Create a `.env.local` file based on the provided `env.example` and add your environment variables.
+3. Run dev server:
 
-4. Run the development server:
 ```bash
-npm run dev
-# or
-yarn dev
+npm run dev --turbopack
 ```
 
-5. Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-## Project Structure
-
-```
-├── app/                      # Next.js App Router pages
-│   ├── api/                  # API endpoints
-│   ├── measure/              # Measure impact page
-│   ├── start/                # Start page with waitlist form
-│   ├── vibes/                # Vibes community page
-│   └── waitlist/             # Waitlist components and schema
-├── components/               # React components
-│   ├── magicui/              # Custom UI components with animations
-│   └── ui/                   # Shadcn UI components
-├── lib/                      # Utility functions
-└── public/                   # Static assets
-```
-
-## Performance Optimizations
-
-- **React Server Components**: Used for improved initial load performance
-- **Component Memoization**: Optimized rendering with React.memo for expensive components
-- **Code Splitting**: Dynamic imports for better chunk management
-- **Responsive Images**: Optimized for various viewport sizes
-- **CSS Optimizations**: Using Tailwind's JIT compiler
-
-## Development Practices
-
-- **Component Structure**: Modular components with clear separation of concerns
-- **TypeScript**: Strong typing for improved developer experience and fewer bugs
-- **DRY Principle**: Reusable components for consistency and maintenance
-- **Accessibility**: ARIA attributes and keyboard navigation support
-- **Performance**: Optimized rendering with React.memo and useCallback
-
-## Deployment
-
-The application is set up for easy deployment on Vercel or similar platforms:
+4. Build for production:
 
 ```bash
 npm run build
-# or
-yarn build
+npm run start
 ```
+
+## Google Ads / Consent
+
+This project includes a lightweight, client-side Ads consent banner (`components/ui/ads-consent.tsx`).
+- The banner asks for explicit consent before loading the Google Ads script.
+- Consent is stored in `localStorage` under `fff_ads_consent`.
+- The banner is mounted globally via `ClientWrapper` so it appears across the site.
+
+If you rely on GDPR/CCPA requirements in your jurisdiction, integrate a full consent management platform and keep legal guidance — this component is a simple, auditable starting point.
+
+## Conventions & Notes
+
+- Pages use the `"use client"` directive where interactive behavior is required.
+- Reuse the `WaitlistForm` (Zod + React Hook Form) for email capture flows.
+- Keep animations declarative with Framer Motion and memoize heavy components.
+
+## Contributing
+
+- Open an issue or PR. Keep changes small and focused.
+- Follow TypeScript and linting rules. Run `npm run lint` before PRs.
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+MIT — see the `LICENSE` file.

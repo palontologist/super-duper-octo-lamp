@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { LoadingCurtain } from "@/components/magicui/loading-curtain";
 import { SpinningText } from "@/components/magicui/spinning-text";
 import { Navigation } from "@/components/ui/navigation";
+import AdsConsent from "./ads-consent";
 
 // Separate HeaderLogo component that could be potentially shared
 const HeaderLogo = () => (
@@ -84,10 +85,11 @@ export function ClientWrapper({ children }: { children: React.ReactNode }) {
       )}
       <HeaderLogo />
       <GlobalNavbar />
+      <AdsConsent />
       {/* Add padding-top to account for fixed navbar */}
       <div className="pt-20 md:pt-24">
         {children}
       </div>
     </>
   );
-} 
+}

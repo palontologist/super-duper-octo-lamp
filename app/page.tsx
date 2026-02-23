@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Separator } from "@/components/ui/separator";
 import { WaitlistForm } from "@/components/ui/waitlist-form";
-import { Check, Users, Target, BarChart3, Globe, Star } from "lucide-react";
+import { Check, Users, Target, BarChart3, Globe, Star, TrendingUp, Calendar, Eye } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
@@ -19,21 +19,21 @@ export default function Page() {
           {/* Left Column */}
           <div className="col-span-6 flex flex-col justify-center">
             <h1 className="heading-1 mb-6 text-text-high">
-              Do less. Deliver more impact.
+              Build and measure world‑changing impact.
             </h1>
             <p className="body-large text-text-medium mb-8">
-              A community + workspace that turns scattered work into mission‑aligned progress — with built‑in impact measurement.
+              FrontForumFocus is a community, media brand, and toolset for founders and organizations building ESG‑aligned businesses.
             </p>
             <div className="flex items-center gap-4 mb-6">
               <Button asChild size="lg" className="bg-impact-green hover:bg-impact-green/90 text-white rounded-xl button-text">
-                <Link href="/start">Apply for the next Focus Cohort (25 spots)</Link>
+                <Link href="#impact-intelligence">Get Impact Intelligence</Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="rounded-xl button-text border-border-color">
-                <Link href="#impact-snapshot">See an Impact Snapshot</Link>
+                <Link href="#greta">Try Greta</Link>
               </Button>
             </div>
             <p className="caption-text text-text-low">
-              Trusted by founders in Nairobi, Lagos, and Cape Town.
+              500+ founders · 50+ countries · 10k+ activities tracked · Bootstrapped & founder‑led
             </p>
           </div>
 
@@ -52,308 +52,386 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Problem → Promise Section */}
-      <section id="problem" className="py-24 px-20 bg-background-alt">
+      {/* Impact Intelligence Section */}
+      <section id="impact-intelligence" className="py-24 px-20 bg-background-alt">
         <div className="max-w-[1440px] mx-auto">
-          <h2 className="heading-2 text-center mb-16">Too many tasks. Not enough traction.</h2>
-          <div className="grid grid-cols-12 gap-6">
+          <h2 className="heading-2 mb-16 text-text-high">Impact Intelligence by FrontForumFocus</h2>
+          <div className="grid grid-cols-12 gap-12 items-start">
             <div className="col-span-6">
-              <p className="body-large text-text-medium">
-                Founders and sustainability teams juggle tools, meetings, and reports — and the mission gets lost. 
-                Frontforumfocus gives you a weekly rhythm that keeps everyone focused on what advances your mission—and proves it.
+              <p className="body-large text-text-medium mb-8">
+                A newsletter and podcast on how impact, capital, and technology are turning into real infrastructure—not just PR stories.
+              </p>
+              <div className="mb-8">
+                <h3 className="body-medium font-semibold text-text-high mb-4">Impact Trends 2026 (with Rosa, DeFem Agency)</h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <span className="text-impact-green font-bold flex-shrink-0">•</span>
+                    <span className="body-medium text-text-high">Part 1 – Where the money is going (capital & policy)</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-impact-green font-bold flex-shrink-0">•</span>
+                    <span className="body-medium text-text-high">Part 2 – What operators are actually doing on the ground</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-impact-green font-bold flex-shrink-0">•</span>
+                    <span className="body-medium text-text-high">Part 3 – Impact as infrastructure (data, rails, tooling)</span>
+                  </li>
+                </ul>
+              </div>
+              <Button asChild size="lg" className="bg-impact-green hover:bg-impact-green/90 text-white rounded-xl button-text">
+                <Link href="/subscribe">Subscribe to Impact Intelligence</Link>
+              </Button>
+            </div>
+            <div className="col-span-6">
+              <div className="aspect-square bg-gradient-to-br from-focus-purple/20 to-impact-green/20 rounded-xl flex items-center justify-center border border-border-color">
+                <TrendingUp className="w-24 h-24 text-focus-purple" />
+              </div>
+              <Link href="#" className="body-medium text-focus-purple hover:underline mt-6 inline-block">
+                Listen to the podcast →
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Two Lanes Section */}
+      <section id="two-lanes" className="py-24 px-20">
+        <div className="max-w-[1440px] mx-auto">
+          <h2 className="heading-2 text-center mb-16">Two paths. One impact thesis.</h2>
+          <div className="grid grid-cols-2 gap-8">
+            {/* For Founders Card */}
+            <Card className="border-border-color shadow-sm p-8">
+              <CardHeader className="p-0 mb-6">
+                <CardTitle className="heading-3">For Founders & Indie Builders</CardTitle>
+              </CardHeader>
+              <CardContent className="p-0 space-y-6">
+                <p className="body-medium text-text-medium">
+                  Tools and stories to help you price your time, grow revenue, and stay aligned with your impact thesis.
+                </p>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2">
+                    <span className="text-impact-green font-bold flex-shrink-0">•</span>
+                    <span className="body-medium text-text-high">Greta – calendar → value & impact dashboard</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-impact-green font-bold flex-shrink-0">•</span>
+                    <span className="body-medium text-text-high">Impact Intelligence for founder decisions</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-impact-green font-bold flex-shrink-0">•</span>
+                    <span className="body-medium text-text-high">Podcast episodes with early‑stage, impact‑driven builders</span>
+                  </li>
+                </ul>
+                <Button asChild size="lg" className="bg-impact-green hover:bg-impact-green/90 text-white rounded-xl button-text w-full">
+                  <Link href="#greta">Explore tools for founders</Link>
+                </Button>
+                <Link href="#greta" className="body-medium text-focus-purple hover:underline block">
+                  Try Greta free for 14 days →
+                </Link>
+              </CardContent>
+            </Card>
+
+            {/* For Organizations Card */}
+            <Card className="border-border-color shadow-sm p-8">
+              <CardHeader className="p-0 mb-6">
+                <CardTitle className="heading-3">For Organizations & Investors</CardTitle>
+              </CardHeader>
+              <CardContent className="p-0 space-y-6">
+                <p className="body-medium text-text-medium">
+                  Metrics, dashboards, and insight to measure and report your financial and ESG performance.
+                </p>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2">
+                    <span className="text-focus-purple font-bold flex-shrink-0">•</span>
+                    <span className="body-medium text-text-high">Enterprise impact & ESG measurement platform</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-focus-purple font-bold flex-shrink-0">•</span>
+                    <span className="body-medium text-text-high">Financial + non‑financial impact dashboards</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-focus-purple font-bold flex-shrink-0">•</span>
+                    <span className="body-medium text-text-high">Reporting support for boards, donors, and regulators</span>
+                  </li>
+                </ul>
+                <Button asChild size="lg" className="bg-focus-purple hover:bg-focus-purple/90 text-white rounded-xl button-text w-full">
+                  <Link href="#enterprise">Talk to us about the enterprise platform</Link>
+                </Button>
+                <Link href="#enterprise" className="body-medium text-focus-purple hover:underline block">
+                  View enterprise overview →
+                </Link>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Greta Highlight Section */}
+      <section id="greta" className="py-24 px-20 bg-background-alt">
+        <div className="max-w-[1440px] mx-auto">
+          <h2 className="heading-2 text-center mb-4">Greta: impact and pricing intelligence for founders</h2>
+          <p className="body-large text-text-medium text-center mb-16 max-w-2xl mx-auto">
+            A tiny tool that turns your calendar into a value and impact dashboard—so you know which clients, projects, and activities are truly worth it.
+          </p>
+          
+          <div className="grid grid-cols-3 gap-8 mb-12">
+            {/* Feature 1 */}
+            <div className="text-center">
+              <div className="w-16 h-16 rounded-full bg-impact-green/20 flex items-center justify-center mx-auto mb-4">
+                <Calendar className="w-8 h-8 text-impact-green" />
+              </div>
+              <h3 className="heading-3 mb-4">Connect your calendar</h3>
+              <p className="body-medium text-text-medium">
+                Pull in meetings, work blocks, and key projects automatically.
               </p>
             </div>
-            <div className="col-span-6 space-y-4">
-              <div className="flex items-start gap-3">
-                <div className="w-6 h-6 rounded-full bg-impact-green flex items-center justify-center flex-shrink-0 mt-1">
-                  <Check className="w-4 h-4 text-white" />
-                </div>
-                <p className="body-medium text-text-high">From scattered tasks to aligned weekly priorities</p>
+
+            {/* Feature 2 */}
+            <div className="text-center">
+              <div className="w-16 h-16 rounded-full bg-focus-purple/20 flex items-center justify-center mx-auto mb-4">
+                <Target className="w-8 h-8 text-focus-purple" />
               </div>
-              <div className="flex items-start gap-3">
-                <div className="w-6 h-6 rounded-full bg-impact-green flex items-center justify-center flex-shrink-0 mt-1">
-                  <Check className="w-4 h-4 text-white" />
-                </div>
-                <p className="body-medium text-text-high">From long reports to a one‑page Impact Snapshot</p>
+              <h3 className="heading-3 mb-4">Tag what matters</h3>
+              <p className="body-medium text-text-medium">
+                Label clients, projects, and founder work (product, sales, ops, fundraising). Our AI learns your patterns.
+              </p>
+            </div>
+
+            {/* Feature 3 */}
+            <div className="text-center">
+              <div className="w-16 h-16 rounded-full bg-impact-green/20 flex items-center justify-center mx-auto mb-4">
+                <Eye className="w-8 h-8 text-impact-green" />
               </div>
-              <div className="flex items-start gap-3">
-                <div className="w-6 h-6 rounded-full bg-impact-green flex items-center justify-center flex-shrink-0 mt-1">
-                  <Check className="w-4 h-4 text-white" />
-                </div>
-                <p className="body-medium text-text-high">From solo grind to peer accountability and momentum</p>
+              <h3 className="heading-3 mb-4">See the real picture</h3>
+              <p className="body-medium text-text-medium">
+                Effective hourly rate, time by client/project, and mission‑alignment scores.
+              </p>
+            </div>
+          </div>
+
+          {/* Sample UI */}
+          <div className="bg-white border border-border-color rounded-xl p-8 mb-12">
+            <p className="body-medium text-text-medium text-center mb-4">Sample insights from Greta:</p>
+            <div className="grid grid-cols-3 gap-4 text-center">
+              <div className="p-4 bg-background-alt rounded-lg">
+                <p className="body-medium text-text-high"><strong>Supplier Call</strong></p>
+                <p className="caption-text text-impact-green mt-2"><strong>87% mission‑aligned</strong> → double down</p>
+              </div>
+              <div className="p-4 bg-background-alt rounded-lg">
+                <p className="body-medium text-text-high"><strong>Fundraising Email</strong></p>
+                <p className="caption-text text-warning-color mt-2"><strong>65%</strong> → refine, but keep</p>
+              </div>
+              <div className="p-4 bg-background-alt rounded-lg">
+                <p className="body-medium text-text-high"><strong>Social Media Update</strong></p>
+                <p className="caption-text text-text-low mt-2"><strong>23%</strong> → delegate or cut</p>
               </div>
             </div>
+          </div>
+
+          {/* CTA */}
+          <div className="text-center">
+            <Button asChild size="lg" className="bg-impact-green hover:bg-impact-green/90 text-white rounded-xl button-text">
+              <Link href="/greta">Try Greta – Free 14‑day trial</Link>
+            </Button>
+            <p className="caption-text text-text-low mt-4">
+              Founder plan – $25/month billed yearly
+            </p>
           </div>
         </div>
       </section>
 
-      {/* How It Works Section */}
-      <section id="how-it-works" className="py-24 px-20">
+      {/* Enterprise Platform Section */}
+      <section id="enterprise" className="py-24 px-20">
         <div className="max-w-[1440px] mx-auto">
-          <h2 className="heading-2 text-center mb-16">How it works</h2>
-          <div className="grid grid-cols-3 gap-6">
+          <h2 className="heading-2 text-center mb-4">Enterprise impact & ESG measurement</h2>
+          <p className="body-large text-text-medium text-center mb-16 max-w-2xl mx-auto">
+            Our enterprise tool turns your operations and finances into measurable impact infrastructure—so you can track, report, and optimize ESG outcomes.
+          </p>
+          
+          <div className="space-y-8 mb-12">
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 rounded-full bg-focus-purple text-white flex items-center justify-center flex-shrink-0 font-semibold">
+                ✓
+              </div>
+              <div>
+                <h3 className="heading-3 mb-2">Unified impact dashboard</h3>
+                <p className="body-medium text-text-medium">Combine financial, operational, and program data in one place.</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 rounded-full bg-focus-purple text-white flex items-center justify-center flex-shrink-0 font-semibold">
+                ✓
+              </div>
+              <div>
+                <h3 className="heading-3 mb-2">ESG & impact reporting</h3>
+                <p className="body-medium text-text-medium">Generate clear reports for investors, donors, boards, and regulators.</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 rounded-full bg-focus-purple text-white flex items-center justify-center flex-shrink-0 font-semibold">
+                ✓
+              </div>
+              <div>
+                <h3 className="heading-3 mb-2">Decision support</h3>
+                <p className="body-medium text-text-medium">See which programs, regions, or portfolios drive the strongest financial + social return.</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center">
+            <Button asChild size="lg" className="bg-focus-purple hover:bg-focus-purple/90 text-white rounded-xl button-text">
+              <Link href="/enterprise">Book an intro call</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Social Proof / Testimonials Section */}
+      <section id="testimonials" className="py-24 px-20 bg-background-alt">
+        <div className="max-w-[1440px] mx-auto">
+          <h2 className="heading-2 text-center mb-4">Founders building with FrontForumFocus</h2>
+          <p className="body-large text-text-medium text-center mb-16 max-w-2xl mx-auto">
+            95% of users report stronger mission alignment after 3 months.
+          </p>
+          
+          <div className="grid grid-cols-3 gap-8">
             <Card className="border-border-color shadow-sm">
-              <CardHeader>
-                <div className="w-12 h-12 rounded-full bg-impact-green text-white flex items-center justify-center heading-3 mb-4">
-                  1
-                </div>
-                <CardTitle className="heading-3">Map your mission</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="body-medium text-text-medium">
-                  Translate mission → quarterly outcomes → weekly &quot;Top 3&quot; in 30 mins.
+              <CardContent className="pt-8">
+                <p className="body-large text-text-high mb-6">
+                  &quot;Now I know if my daily grind actually grows my impact—it's become my north star.&quot;
                 </p>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-impact-green flex items-center justify-center text-white font-semibold text-sm">
+                    E
+                  </div>
+                  <div>
+                    <p className="body-medium font-semibold text-text-high">Edna</p>
+                    <p className="caption-text text-text-low">EdTech founder</p>
+                  </div>
+                </div>
               </CardContent>
             </Card>
 
             <Card className="border-border-color shadow-sm">
-              <CardHeader>
-                <div className="w-12 h-12 rounded-full bg-focus-purple text-white flex items-center justify-center heading-3 mb-4">
-                  2
-                </div>
-                <CardTitle className="heading-3">Track simple impact metrics</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="body-medium text-text-medium">
-                  Pick 2-3 sector‑specific metrics (AgriTech, CleanTech, FinTech, HealthTech).
+              <CardContent className="pt-8">
+                <p className="body-large text-text-high mb-6">
+                  &quot;Donor reports went from 12 hours to 30 minutes. Our team finally shares the same definition of progress.&quot;
                 </p>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-focus-purple flex items-center justify-center text-white font-semibold text-sm">
+                    S
+                  </div>
+                  <div>
+                    <p className="body-medium font-semibold text-text-high">Samuel</p>
+                    <p className="caption-text text-text-low">Health NGO leader</p>
+                  </div>
+                </div>
               </CardContent>
             </Card>
 
             <Card className="border-border-color shadow-sm">
-              <CardHeader>
-                <div className="w-12 h-12 rounded-full bg-impact-green text-white flex items-center justify-center heading-3 mb-4">
-                  3
-                </div>
-                <CardTitle className="heading-3">Ship and show progress</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="body-medium text-text-medium">
-                  Publish a shareable Impact Snapshot in 14 days.
+              <CardContent className="pt-8">
+                <p className="body-large text-text-high mb-6">
+                  &quot;Greta gave me confidence to fundraise and expand internationally.&quot;
                 </p>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-impact-green flex items-center justify-center text-white font-semibold text-sm">
+                    J
+                  </div>
+                  <div>
+                    <p className="body-medium font-semibold text-text-high">Joy</p>
+                    <p className="caption-text text-text-low">Youth skills innovator</p>
+                  </div>
+                </div>
               </CardContent>
             </Card>
           </div>
         </div>
       </section>
 
-      {/* Credibility Section */}
-      <section id="proof" className="py-24 px-20 bg-background-alt">
+      {/* Community Section */}
+      <section id="community" className="py-24 px-20">
         <div className="max-w-[1440px] mx-auto">
-          <h2 className="heading-2 text-center mb-16">Proof it works</h2>
-          <div className="grid grid-cols-12 gap-6 mb-12">
-            {/* Testimonial */}
-            <div className="col-span-6">
-              <Card className="border-border-color shadow-sm h-full">
-                <CardContent className="pt-6">
-                  <p className="body-large text-text-high mb-6">
-                    &quot;We cut ESG reporting time by 50% and shipped 9/12 weekly priorities.&quot;
-                  </p>
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-impact-green flex items-center justify-center text-white font-semibold">
-                      CT
-                    </div>
-                    <div>
-                      <p className="body-medium font-semibold text-text-high">CleanTech Founder</p>
-                      <p className="caption-text text-text-low">Nairobi</p>
-                    </div>
-                  </div>
-                  <div className="flex gap-1 mt-4">
-                    {[1, 2, 3, 4, 5].map((i) => (
-                      <Star key={i} className="w-4 h-4 fill-warning-color text-warning-color" />
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
+          <h2 className="heading-2 text-center mb-4">The FrontForumFocus community</h2>
+          <p className="body-large text-text-medium text-center mb-16 max-w-2xl mx-auto">
+            A global network of founders, operators, and creators who believe impact should be measurable—not just a tagline.
+          </p>
+          
+          <div className="grid grid-cols-4 gap-6 mb-12">
+            <div className="text-center">
+              <div className="w-12 h-12 rounded-full bg-impact-green/20 flex items-center justify-center mx-auto mb-4">
+                <Globe className="w-6 h-6 text-impact-green" />
+              </div>
+              <h3 className="body-medium font-semibold text-text-high mb-2">Discord</h3>
+              <p className="caption-text text-text-medium">500+ members from 50+ countries</p>
             </div>
 
-            {/* Stats */}
-            <div className="col-span-6 grid grid-cols-3 gap-4">
-              <Card className="border-border-color shadow-sm text-center">
-                <CardContent className="pt-6">
-                  <div className="heading-1 text-impact-green mb-2">14</div>
-                  <p className="caption-text text-text-low">days to first Impact Snapshot</p>
-                </CardContent>
-              </Card>
-              <Card className="border-border-color shadow-sm text-center">
-                <CardContent className="pt-6">
-                  <div className="heading-1 text-focus-purple mb-2">80-90%</div>
-                  <p className="caption-text text-text-low">weekly &quot;Top 3&quot; completion</p>
-                </CardContent>
-              </Card>
-              <Card className="border-border-color shadow-sm text-center">
-                <CardContent className="pt-6">
-                  <div className="heading-1 text-impact-green mb-2">9/10</div>
-                  <p className="caption-text text-text-low">cohort satisfaction</p>
-                </CardContent>
-              </Card>
+            <div className="text-center">
+              <div className="w-12 h-12 rounded-full bg-focus-purple/20 flex items-center justify-center mx-auto mb-4">
+                <Users className="w-6 h-6 text-focus-purple" />
+              </div>
+              <h3 className="body-medium font-semibold text-text-high mb-2">Events</h3>
+              <p className="caption-text text-text-medium">Live sessions with founders & investors</p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-12 h-12 rounded-full bg-impact-green/20 flex items-center justify-center mx-auto mb-4">
+                <Target className="w-6 h-6 text-impact-green" />
+              </div>
+              <h3 className="body-medium font-semibold text-text-high mb-2">Resources</h3>
+              <p className="caption-text text-text-medium">Templates, frameworks, and tools</p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-12 h-12 rounded-full bg-focus-purple/20 flex items-center justify-center mx-auto mb-4">
+                <BarChart3 className="w-6 h-6 text-focus-purple" />
+              </div>
+              <h3 className="body-medium font-semibold text-text-high mb-2">Office hours</h3>
+              <p className="caption-text text-text-medium">Small-group calls on impact, capital, product</p>
             </div>
           </div>
 
-          {/* CTA Bar */}
+          <div className="text-center">
+            <Button asChild size="lg" className="bg-impact-green hover:bg-impact-green/90 text-white rounded-xl button-text">
+              <Link href="/community">Join the community</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* About Teaser Section */}
+      <section id="about" className="py-24 px-20 bg-background-alt">
+        <div className="max-w-[800px] mx-auto text-center">
+          <h2 className="heading-2 mb-8">About FrontForumFocus</h2>
+          <p className="body-large text-text-medium mb-6">
+            We're a bootstrapped, founder‑led team building the infrastructure for mission‑driven work.
+          </p>
+          <p className="body-large text-text-medium mb-8">
+            From solo founders to global organizations, we help you answer one question:
+          </p>
+          <p className="heading-3 text-text-high mb-8">
+            Is the work you're doing today actually moving your mission—and your numbers?
+          </p>
+          <Link href="/about" className="body-medium text-focus-purple hover:underline inline-block">
+            Read our story →
+          </Link>
+        </div>
+      </section>
+
+      {/* Final CTA Section */}
+      <section id="final-cta" className="py-24 px-20">
+        <div className="max-w-[800px] mx-auto text-center">
+          <h2 className="heading-2 mb-4">Start building with impact intelligence.</h2>
+          <p className="body-large text-text-medium mb-12">
+            Get the signals, tools, and community you need to grow with purpose and financial clarity.
+          </p>
           <div className="flex items-center justify-center gap-4">
             <Button asChild size="lg" className="bg-impact-green hover:bg-impact-green/90 text-white rounded-xl button-text">
-              <Link href="/start">Apply for the next Focus Cohort</Link>
+              <Link href="#impact-intelligence">Get Impact Intelligence</Link>
             </Button>
-            <Link href="https://sourcia.ai/agent-george" target="_blank" rel="noopener noreferrer" className="body-medium text-focus-purple hover:underline">
-              Book a 15‑min intro
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Feature Highlights Section */}
-      <section id="product" className="py-24 px-20">
-        <div className="max-w-[1440px] mx-auto">
-          <h2 className="heading-2 text-center mb-16">What you get</h2>
-          
-          {/* Feature Block A */}
-          <div className="grid grid-cols-12 gap-12 mb-16 items-center">
-            <div className="col-span-5">
-              <div className="aspect-square bg-gradient-to-br from-impact-green/20 to-focus-purple/20 rounded-xl flex items-center justify-center border border-border-color">
-                <Target className="w-24 h-24 text-impact-green" />
-              </div>
-            </div>
-            <div className="col-span-7">
-              <h3 className="heading-3 mb-4">Mission Map</h3>
-              <p className="body-medium text-text-medium">
-                Clear line of sight from vision to weekly actions.
-              </p>
-            </div>
-          </div>
-
-          {/* Feature Block B */}
-          <div className="grid grid-cols-12 gap-12 mb-16 items-center">
-            <div className="col-span-7">
-              <h3 className="heading-3 mb-4">Impact Snapshot</h3>
-              <p className="body-medium text-text-medium">
-                Auto‑generated one‑pager for investors, partners, and grants.
-              </p>
-            </div>
-            <div className="col-span-5">
-              <div className="aspect-square bg-gradient-to-br from-focus-purple/20 to-impact-green/20 rounded-xl flex items-center justify-center border border-border-color">
-                <BarChart3 className="w-24 h-24 text-focus-purple" />
-              </div>
-            </div>
-          </div>
-
-          {/* Feature Block C */}
-          <div className="grid grid-cols-12 gap-12 mb-16 items-center">
-            <div className="col-span-5">
-              <div className="aspect-square bg-gradient-to-br from-impact-green/20 to-focus-purple/20 rounded-xl flex items-center justify-center border border-border-color">
-                <Users className="w-24 h-24 text-impact-green" />
-              </div>
-            </div>
-            <div className="col-span-7">
-              <h3 className="heading-3 mb-4">Focus Cohorts</h3>
-              <p className="body-medium text-text-medium">
-                Weekly sessions, peer check‑ins, and mentor office hours.
-              </p>
-            </div>
-          </div>
-
-          {/* Feature Block D */}
-          <div className="grid grid-cols-12 gap-12 items-center">
-            <div className="col-span-7">
-              <h3 className="heading-3 mb-4">Public Profiles (opt‑in)</h3>
-              <p className="body-medium text-text-medium">
-                Show wins and impact to attract partners and talent.
-              </p>
-            </div>
-            <div className="col-span-5">
-              <div className="aspect-square bg-gradient-to-br from-focus-purple/20 to-impact-green/20 rounded-xl flex items-center justify-center border border-border-color">
-                <Globe className="w-24 h-24 text-focus-purple" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* For Who Section */}
-      <section id="cohorts" className="py-24 px-20 bg-background-alt">
-        <div className="max-w-[1440px] mx-auto">
-          <h2 className="heading-2 text-center mb-16">Built for mission‑driven teams</h2>
-          <div className="grid grid-cols-3 gap-6">
-            <Card className="border-border-color shadow-sm">
-              <CardHeader>
-                <CardTitle className="heading-3">Founders & small teams (2-20)</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="body-medium text-text-medium">
-                  <strong>Outcome:</strong> Prioritize what moves the mission. Share progress with investors and accelerators.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-border-color shadow-sm">
-              <CardHeader>
-                <CardTitle className="heading-3">Sustainability/ESG leads (SMEs 50-500)</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="body-medium text-text-medium">
-                  <strong>Outcome:</strong> Centralize simple metrics and reduce reporting time without enterprise overhead.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-border-color shadow-sm">
-              <CardHeader>
-                <CardTitle className="heading-3">Hubs & programs</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="body-medium text-text-medium">
-                  <strong>Outcome:</strong> Run &quot;Cohort‑in‑a‑Box&quot; to help startups ship measurable outcomes.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Offer Section */}
-      <section id="pricing" className="py-24 px-20">
-        <div className="max-w-[1440px] mx-auto">
-          <h2 className="heading-2 text-center mb-16">Join the next 4‑week Focus Cohort</h2>
-          <div className="grid grid-cols-12 gap-12">
-            {/* Left - Checklist */}
-            <div className="col-span-6 space-y-4">
-              <div className="flex items-start gap-3">
-                <Check className="w-6 h-6 text-impact-green flex-shrink-0 mt-1" />
-                <p className="body-medium text-text-high">Weekly live sessions + templates + office hours</p>
-              </div>
-              <div className="flex items-start gap-3">
-                <Check className="w-6 h-6 text-impact-green flex-shrink-0 mt-1" />
-                <p className="body-medium text-text-high">Your first Impact Snapshot in 14 days</p>
-              </div>
-              <div className="flex items-start gap-3">
-                <Check className="w-6 h-6 text-impact-green flex-shrink-0 mt-1" />
-                <p className="body-medium text-text-high">A public profile to showcase wins (optional)</p>
-              </div>
-            </div>
-
-            {/* Right - Pricing Card */}
-            <div className="col-span-6">
-              <Card className="border-impact-green shadow-lg">
-                <CardHeader>
-                  <CardTitle className="heading-3">Early member pricing</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="flex items-center justify-between py-3 border-b border-border-color">
-                    <span className="body-medium font-semibold">Starter</span>
-                    <span className="body-medium text-impact-green">USD 25/user/month</span>
-                  </div>
-                  <div className="flex items-center justify-between py-3 border-b border-border-color">
-                    <span className="body-medium font-semibold">Team</span>
-                    <span className="body-medium text-impact-green">USD 99/user/month</span>
-                  </div>
-                  <div className="bg-background-alt p-4 rounded-lg">
-                    <p className="caption-text text-text-medium">
-                      <strong>Guarantee:</strong> If you don&apos;t publish an Impact Snapshot by week 2, join the next cohort free.
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
+            <Button asChild size="lg" variant="outline" className="rounded-xl button-text border-border-color">
+              <Link href="#greta">Try Greta free</Link>
+            </Button>
           </div>
         </div>
       </section>
@@ -361,8 +439,8 @@ export default function Page() {
       {/* Lead Form Section */}
       <section id="apply" className="py-24 px-20 bg-background-alt">
         <div className="max-w-[640px] mx-auto">
-          <h2 className="heading-2 text-center mb-4">Apply for the next Focus Cohort (25 spots)</h2>
-          <p className="body-medium text-text-low text-center mb-12">We&apos;ll review applications within 48 hours. Enter your email to get started.</p>
+          <h2 className="heading-2 text-center mb-4">Stay updated on impact intelligence</h2>
+          <p className="body-medium text-text-low text-center mb-12">Get insights, tools, and community updates delivered to your inbox. No spam, just impact.</p>
           
           <Card className="border-border-color shadow-lg">
             <CardContent className="pt-6">
@@ -387,37 +465,37 @@ export default function Page() {
           <Accordion type="single" collapsible className="space-y-4">
             <AccordionItem value="item-1" className="border border-border-color rounded-xl px-6">
               <AccordionTrigger className="heading-3 text-left hover:no-underline">
-                Do I need to migrate from Notion/Trello?
+                What is Greta exactly?
               </AccordionTrigger>
               <AccordionContent className="body-medium text-text-medium">
-                No. Keep your tools. Use Frontforumfocus to set priorities, track impact, and create snapshots.
+                Greta is a calendar-to-impact tool for founders. Connect your calendar, tag your work, and see which clients and projects actually align with your mission and revenue goals.
               </AccordionContent>
             </AccordionItem>
 
             <AccordionItem value="item-2" className="border border-border-color rounded-xl px-6">
               <AccordionTrigger className="heading-3 text-left hover:no-underline">
-                Is this only for &quot;ESG teams&quot;?
+                Do I need to use all three products?
               </AccordionTrigger>
               <AccordionContent className="body-medium text-text-medium">
-                No. It&apos;s for mission‑driven founders and teams who want momentum and measurable outcomes.
+                No. Choose what fits your needs. Founders often start with Greta. Organizations often start with the Enterprise platform. Anyone can read Impact Intelligence.
               </AccordionContent>
             </AccordionItem>
 
             <AccordionItem value="item-3" className="border border-border-color rounded-xl px-6">
               <AccordionTrigger className="heading-3 text-left hover:no-underline">
-                How much time weekly?
+                Is this only for ESG-certified organizations?
               </AccordionTrigger>
               <AccordionContent className="body-medium text-text-medium">
-                90 mins total: 30 mins plan; 60 mins live/check‑ins.
+                No. It&apos;s for any founder or organization that cares about impact—whether you're climate tech, education, health, finance, or anything else.
               </AccordionContent>
             </AccordionItem>
 
             <AccordionItem value="item-4" className="border border-border-color rounded-xl px-6">
               <AccordionTrigger className="heading-3 text-left hover:no-underline">
-                What if I can&apos;t share data publicly?
+                What about data privacy?
               </AccordionTrigger>
               <AccordionContent className="body-medium text-text-medium">
-                Metrics are private by default. Public profiles are opt‑in.
+                All your data is private by default. You own your impact dashboards and only share what you choose. No selling data. No surprises.
               </AccordionContent>
             </AccordionItem>
           </Accordion>
@@ -427,14 +505,14 @@ export default function Page() {
       {/* Footer CTA */}
       <section className="py-24 px-20 bg-gradient-to-br from-impact-green/10 to-focus-purple/10">
         <div className="max-w-[800px] mx-auto text-center">
-          <h3 className="heading-2 mb-6">Ready to go from scattered to mission‑aligned?</h3>
+          <h3 className="heading-2 mb-6">Ready to measure what matters?</h3>
           <div className="flex items-center justify-center gap-4 mb-8">
             <Button asChild size="lg" className="bg-impact-green hover:bg-impact-green/90 text-white rounded-xl button-text">
-              <Link href="/start">Apply for the next Focus Cohort</Link>
+              <Link href="#greta">Try Greta free</Link>
             </Button>
-            <Link href="https://sourcia.ai/agent-george" target="_blank" rel="noopener noreferrer" className="body-medium text-focus-purple hover:underline">
-              Book a 15‑min intro
-            </Link>
+            <Button asChild size="lg" className="bg-focus-purple hover:bg-focus-purple/90 text-white rounded-xl button-text">
+              <Link href="#enterprise">Explore Enterprise</Link>
+            </Button>
           </div>
         </div>
       </section>
@@ -467,231 +545,13 @@ export default function Page() {
       <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-border-color p-4 shadow-lg z-40">
         <div className="flex items-center gap-3">
           <Button asChild className="flex-1 bg-impact-green hover:bg-impact-green/90 text-white rounded-xl">
-            <Link href="/start">Apply</Link>
+            <Link href="#greta">Try Greta</Link>
           </Button>
-          <Link href="https://sourcia.ai/agent-george" target="_blank" rel="noopener noreferrer" className="caption-text text-focus-purple hover:underline whitespace-nowrap">
-            Intro call
-          </Link>
-      <div className="relative min-h-screen flex items-center justify-center">
-        {/* Background Image - Using MOSHED image */}
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.5, delay: 0.5 }}
-          className="absolute inset-0 overflow-hidden"
-        >
-          <Image
-            src="/new.png"
-            alt="Abstract hero background"
-            fill
-            className="object-cover opacity-80"
-            priority
-          />
-          
-          {/* Glitch effect overlay elements */}
-          <motion.div
-            animate={{ 
-              x: [0, 10, -5, 0],
-              opacity: [0.3, 0.7, 0.3] 
-            }}
-            transition={{ 
-              duration: 2, 
-              repeat: Infinity,
-              ease: "easeInOut" 
-            }}
-            className="absolute top-20 left-20 w-[30px] h-[30px] bg-cyan-400 opacity-30"
-          />
-          <motion.div
-            animate={{ 
-              x: [0, -8, 12, 0],
-              opacity: [0.2, 0.6, 0.2] 
-            }}
-            transition={{ 
-              duration: 3, 
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 1 
-            }}
-            className="absolute top-40 right-32 w-[30px] h-[30px] bg-pink-400 opacity-30"
-          />
-          <motion.div
-            animate={{ 
-              x: [0, 15, -10, 0],
-              opacity: [0.4, 0.8, 0.4] 
-            }}
-            transition={{ 
-              duration: 2.5, 
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 2 
-            }}
-            className="absolute bottom-32 left-40 w-[30px] h-[30px] bg-purple-400 opacity-30"
-          />
-        </motion.div>
-
-        {/* Hero Text */}
-        <div className="relative z-10 px-8 max-w-4xl mx-auto text-center">
-          <motion.h1
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 1 }}
-            className="text-6xl md:text-7xl lg:text-8xl font-light leading-tight mb-4"
-          >
-            
-                Community + tools to connect purpose
-            
-                with outcomes
-           
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1.9 }}
-            className="mx-auto max-w-2xl text-lg md:text-xl text-white/70 font-medium"
-          >
-            Where ambitious founders and teams align daily work to what matters—with community, breakthrough tools, and AI-powered insights.
-          </motion.p>
-
-          {/* CTA Row */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 2.2 }}
-            className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3"
-          >
-            <Button asChild size="lg" className="rounded-full px-6">
-              <Link href="/start">Try Greta</Link>
-            </Button>
-
-            <Button asChild size="lg" variant="outline" className="rounded-full px-6">
-              <Link href="/start?demo=1">Request Demo</Link>
-            </Button>
-
-            <Button asChild size="lg" variant="ghost" className="rounded-full px-6">
-              <Link href="/waitlist">Join Newsletter</Link>
-            </Button>
-          </motion.div>
+          <Button asChild className="flex-1 bg-focus-purple hover:bg-focus-purple/90 text-white rounded-xl">
+            <Link href="#enterprise">Enterprise</Link>
+          </Button>
         </div>
       </div>
-
-      {/* Problem & Vision Section */}
-      <section className="min-h-screen flex items-center justify-center px-6">
-        <div className="max-w-3xl text-center py-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Most platforms track your output—not your true impact.
-          </h2>
-          <p className="text-lg md:text-xl opacity-80 mb-8">
-            In today&apos;s world, it&apos;s easy to get lost in busywork, fragmented tasks, and metrics that don&apos;t move the needle. FrontForumFocus is built for those who believe that every action, task, and goal should drive real progress towards purpose—individually and at scale.
-          </p>
-          <p className="text-base md:text-lg font-medium text-teal-300">
-            We put purpose at the heart of productivity.
-          </p>
-        </div>
-      </section>
-
-      {/* Ecosystem: Greta + Impact Dashboard + Podcast */}
-      <section className="min-h-screen flex items-center justify-center py-20 px-6 bg-gradient-to-b from-black via-neutral-900 to-black">
-        <div className="max-w-6xl w-full">
-          <h2 className="font-bold text-4xl text-center mb-6">Our Ecosystem</h2>
-          <div className="flex flex-col md:flex-row gap-8">
-            {/* Greta Card */}
-            <div className="flex-1 bg-white/5 rounded-xl p-8">
-              <h3 className="text-2xl font-bold mb-2">Greta: Your Mission OS</h3>
-              <p className="mb-3">
-                Turn your daily grind into purpose-driven progress. Score your tasks for mission alignment, reflect with AI-powered insights, and stay truly on track—all in one app.
-              </p>
-              <a href="https://greta-v2.vercel.app/dashboard" target="_blank" rel="noopener noreferrer" className="text-cyan-300 underline">See Greta in action →</a>
-            </div>
-            {/* Impact Dashboard Card */}
-            <div className="flex-1 bg-white/5 rounded-xl p-8">
-              <h3 className="text-2xl font-bold mb-2">Impact Dashboard (Enterprise)</h3>
-              <p className="mb-3">
-                Visualize and report your organization’s real-world impact. From ESG and SDGs to custom outcomes, track progress, spot opportunities, and share your story with the world.
-              </p>
-              <a href="https://impact-dash-ten.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-cyan-300 underline">Explore the dashboard →</a>
-            </div>
-            {/* Podcast Card */}
-            <div className="flex-1 bg-white/5 rounded-xl p-8">
-              <h3 className="text-2xl font-bold mb-2">Podcast</h3>
-              <p className="mb-3">
-                Unfiltered conversations with founders and leaders who make purpose practical. Get inspired—and get moving.
-              </p>
-              <a href="#" className="text-cyan-300 underline">Listen now →</a>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      {/* How It Works Section */}
-      <section className="min-h-screen flex items-center justify-center py-20 px-6 bg-neutral-950">
-        <div className="max-w-6xl w-full text-center">
-          <h2 className="font-bold text-4xl mb-8">How It Works</h2>
-          <div className="flex flex-col md:flex-row gap-8 justify-center items-center">
-            <div className="flex-1">
-              <div className="text-5xl text-cyan-300 mb-2">1</div>
-              <div>Join FrontForumFocus—free for founders and teams</div>
-            </div>
-            <div className="flex-1">
-              <div className="text-5xl text-cyan-300 mb-2">2</div>
-              <div>Activate Greta or request Enterprise Impact tools</div>
-            </div>
-            <div className="flex-1">
-              <div className="text-5xl text-cyan-300 mb-2">3</div>
-              <div>Get actionable AI nudges, track alignment, measure results</div>
-            </div>
-            <div className="flex-1">
-              <div className="text-5xl text-cyan-300 mb-2">4</div>
-              <div>Celebrate impact—share your story and learn from the community</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Social Proof Section */}
-      <section className="min-h-screen flex items-center justify-center py-16 bg-black">
-        <div className="max-w-4xl w-full text-center">
-          <h2 className="font-bold text-3xl mb-4">Real Impact, Real Stories</h2>
-          <div className="text-lg mb-8 opacity-80">
-            <p>“Greta helped our team stay focused—impact is now a conversation, not just a spreadsheet.”</p>
-            <p className="mt-4 italic text-cyan-300">— FFF Beta User</p>
-          </div>
-          <div className="flex flex-wrap justify-center gap-6">
-            <div className="bg-white/5 rounded-xl p-6">+20 founders aligned daily</div>
-            <div className="bg-white/5 rounded-xl p-6">Enterprise dashboards for 2+ pilot companies</div>
-            <div className="bg-white/5 rounded-xl p-6">Podcast listeners in 12+ countries</div>
-          </div>
-        </div>
-      </section>
-
-      {/* Final CTA */}
-      <section className="min-h-screen flex items-center justify-center px-6">
-        <div className="max-w-4xl text-center py-16">
-          <h2 className="text-4xl font-extrabold mb-4">Make purpose the north star for your team</h2>
-          <p className="text-white/70 mb-6">Start a free trial and see how small changes in focus create outsized impact.</p>
-          <div className="flex items-center justify-center gap-4">
-            <Button asChild size="lg" className="rounded-full px-8">
-              <Link href="https://greta-v2.vercel.app/" target="_blank" rel="noopener noreferrer">Try Greta</Link>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="rounded-full px-8">
-              <Link href="https://sourcia.ai/agent-george" target="_blank" rel="noopener noreferrer">Request Demo</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="py-8 px-6 bg-black border-t border-white/5">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="text-sm text-white/70">© {new Date().getFullYear()} Greta — Built for founders</div>
-          <nav className="flex gap-4 text-sm">
-            <Link href="/privacy" className="text-white/60 hover:underline">Privacy</Link>
-            <Link href="/terms" className="text-white/60 hover:underline">Terms</Link>
-            <Link href="/contact" className="text-white/60 hover:underline">Contact</Link>
-          </nav>
-        </div>
-      </footer>
-
     </div>
   );
 }

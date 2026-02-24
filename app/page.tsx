@@ -19,10 +19,10 @@ export default function Page() {
           {/* Left Column */}
           <div className="col-span-6 flex flex-col justify-center">
             <h1 className="heading-1 mb-6 text-text-high">
-              Build and measure world‑changing impact.
+              Our mission: make impact measurable for everyone.
             </h1>
             <p className="body-large text-text-medium mb-8">
-              FrontForumFocus is a community, media brand, and toolset for founders and organizations building ESG‑aligned businesses.
+              FrontForumFocus exists to help founders and organizations align daily work, capital, and decisions with their deepest missions.
             </p>
             <div className="flex items-center gap-4 mb-6">
               <Button asChild size="lg" className="bg-impact-green hover:bg-impact-green/90 text-white rounded-xl button-text">

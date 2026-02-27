@@ -120,22 +120,7 @@ export default function HomePage() {
 
     </div>
   );
-}
-            </div>
-            <div className="col-span-6">
-              <div className="aspect-square bg-gradient-to-br from-focus-purple/20 to-impact-green/20 rounded-xl flex items-center justify-center border border-border-color">
-                <TrendingUp className="w-24 h-24 text-focus-purple" />
-              </div>
-              <Link href="#" className="body-medium text-focus-purple hover:underline mt-6 inline-block">
-                Listen to the podcast →
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Two Lanes Section */}
-      <section id="two-lanes" className="py-24 px-20">
+} className="py-24 px-20">
         <div className="max-w-[1440px] mx-auto">
           <h2 className="heading-2 text-center mb-16">Two paths. One impact thesis.</h2>
           <div className="grid grid-cols-2 gap-8">

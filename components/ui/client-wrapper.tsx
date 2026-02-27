@@ -72,6 +72,7 @@ export function ClientWrapper({ children }: { children: React.ReactNode }) {
   
   useEffect(() => {
     setIsMounted(true);
+    setIsLoadingComplete(true);
   }, []);
   
   const handleLoadingComplete = () => {
@@ -81,7 +82,7 @@ export function ClientWrapper({ children }: { children: React.ReactNode }) {
   return (
     <>
       {isMounted && !isLoadingComplete && (
-        <LoadingCurtain onLoadingComplete={handleLoadingComplete} />
+        <LoadingCurtain minLoadingTime={0} onLoadingComplete={handleLoadingComplete} />
       )}
       <HeaderLogo />
       <GlobalNavbar />

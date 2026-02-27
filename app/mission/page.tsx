@@ -3,22 +3,11 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Navigation } from "@/components/ui/navigation";
 import { Heart, Lightbulb, Users, Globe, TrendingUp, Target } from "lucide-react";
 
 export default function MissionPage() {
   return (
-    <div className="w-full min-h-screen bg-white text-text-high">
-      {/* Navigation */}
-      <nav className="sticky top-0 bg-white border-b border-border-color z-50 py-4 px-20">
-        <div className="max-w-[1440px] mx-auto flex items-center justify-between">
-          <Link href="/" className="heading-3 text-impact-green">
-            FrontForumFocus
-          </Link>
-          <Navigation isWhitePage={true} />
-        </div>
-      </nav>
-
+    <div className="w-full min-h-screen bg-white text-text-high pt-24">
       {/* Hero Section */}
       <section className="py-24 px-20 bg-gradient-to-br from-impact-green/10 to-background-alt">
         <div className="max-w-[1440px] mx-auto">

@@ -3,22 +3,11 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Navigation } from "@/components/ui/navigation";
 import { CheckCircle, Zap, Users, TrendingUp, Target, ArrowRight } from "lucide-react";
 
 export default function ForFoundersPage() {
   return (
-    <div className="w-full min-h-screen bg-white text-text-high">
-      {/* Navigation */}
-      <nav className="sticky top-0 bg-white border-b border-border-color z-50 py-4 px-20">
-        <div className="max-w-[1440px] mx-auto flex items-center justify-between">
-          <Link href="/" className="heading-3 text-impact-green">
-            FrontForumFocus
-          </Link>
-          <Navigation isWhitePage={true} />
-        </div>
-      </nav>
-
+    <div className="w-full min-h-screen bg-white text-text-high pt-24">
       {/* Hero Section */}
       <section className="py-24 px-20 bg-gradient-to-br from-impact-green/10 to-background-alt">
         <div className="max-w-[1440px] mx-auto">
@@ -28,10 +17,10 @@ export default function ForFoundersPage() {
           </p>
           <div className="flex items-center gap-4">
             <Button asChild size="lg" className="bg-impact-green hover:bg-impact-green/90 text-white rounded-xl button-text">
-              <Link href="#greta">Try Greta Free</Link>
+              <a href="https://greta-v2.vercel.app" target="_blank" rel="noopener noreferrer">Try Greta Free</a>
             </Button>
             <Button asChild size="lg" variant="outline" className="rounded-xl button-text border-border-color">
-              <Link href="#stories">Founder Stories</Link>
+              <Link href="/stories">Founder Stories</Link>
             </Button>
           </div>
         </div>
@@ -144,7 +133,7 @@ export default function ForFoundersPage() {
 
           <div className="text-center">
             <Button asChild size="lg" className="bg-impact-green hover:bg-impact-green/90 text-white rounded-xl button-text">
-              <Link href="#" target="_blank">Start Your Free 14-Day Trial</Link>
+              <a href="https://greta-v2.vercel.app" target="_blank" rel="noopener noreferrer">Start Your Free 14-Day Trial</a>
             </Button>
             <p className="body-small text-text-low mt-4">No credit card required. Founder plan: $25/month billed yearly.</p>
           </div>
@@ -274,10 +263,10 @@ export default function ForFoundersPage() {
             Join 500+ founders who are aligning their time, capital, and decisions with their deepest missions.
           </p>
           <Button asChild size="lg" className="bg-impact-green hover:bg-impact-green/90 text-white rounded-xl button-text">
-            <Link href="#" target="_blank">Start Free 14-Day Trial</Link>
+            <a href="https://greta-v2.vercel.app" target="_blank" rel="noopener noreferrer">Start Free 14-Day Trial</a>
           </Button>
           <p className="body-small text-text-low mt-6">
-            Questions? <Link href="#" className="text-focus-purple hover:underline">Book a 15-min intro call</Link>
+            Questions? <a href="https://cal.com/georgekarani/15min" target="_blank" rel="noopener noreferrer" className="text-focus-purple hover:underline">Book a 15-min intro call</a>
           </p>
         </div>
       </section>

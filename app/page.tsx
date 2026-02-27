@@ -26,10 +26,10 @@ export default function Page() {
             </p>
             <div className="flex items-center gap-4 mb-6">
               <Button asChild size="lg" className="bg-impact-green hover:bg-impact-green/90 text-white rounded-xl button-text">
-                <Link href="#impact-intelligence">Get Impact Intelligence</Link>
+                <a href="https://greta-v2.vercel.app" target="_blank" rel="noopener noreferrer">Try Greta</a>
               </Button>
               <Button asChild size="lg" variant="outline" className="rounded-xl button-text border-border-color">
-                <Link href="#greta">Try Greta</Link>
+                <Link href="/impact-intelligence">Impact Intelligence</Link>
               </Button>
             </div>
             <p className="caption-text text-text-low">
@@ -78,9 +78,11 @@ export default function Page() {
                   </li>
                 </ul>
               </div>
-              <Button asChild size="lg" className="bg-impact-green hover:bg-impact-green/90 text-white rounded-xl button-text">
-                <Link href="/subscribe">Subscribe to Impact Intelligence</Link>
-              </Button>
+              <a href="mailto:support@frontforumfocus.com" className="inline-block">
+                <Button size="lg" className="bg-impact-green hover:bg-impact-green/90 text-white rounded-xl button-text">
+                  Subscribe to Impact Intelligence
+                </Button>
+              </a>
             </div>
             <div className="col-span-6">
               <div className="aspect-square bg-gradient-to-br from-focus-purple/20 to-impact-green/20 rounded-xl flex items-center justify-center border border-border-color">
@@ -123,11 +125,11 @@ export default function Page() {
                   </li>
                 </ul>
                 <Button asChild size="lg" className="bg-impact-green hover:bg-impact-green/90 text-white rounded-xl button-text w-full">
-                  <Link href="#greta">Explore tools for founders</Link>
+                  <a href="https://greta-v2.vercel.app" target="_blank" rel="noopener noreferrer">Explore tools for founders</a>
                 </Button>
-                <Link href="#greta" className="body-medium text-focus-purple hover:underline block">
+                <a href="https://greta-v2.vercel.app" target="_blank" rel="noopener noreferrer" className="body-medium text-focus-purple hover:underline block">
                   Try Greta free for 14 days →
-                </Link>
+                </a>
               </CardContent>
             </Card>
 
@@ -155,11 +157,11 @@ export default function Page() {
                   </li>
                 </ul>
                 <Button asChild size="lg" className="bg-focus-purple hover:bg-focus-purple/90 text-white rounded-xl button-text w-full">
-                  <Link href="#enterprise">Talk to us about the enterprise platform</Link>
+                  <a href="https://cal.com/georgekarani/30min" target="_blank" rel="noopener noreferrer">Book a demo</a>
                 </Button>
-                <Link href="#enterprise" className="body-medium text-focus-purple hover:underline block">
+                <a href="/for-organizations" className="body-medium text-focus-purple hover:underline block">
                   View enterprise overview →
-                </Link>
+                </a>
               </CardContent>
             </Card>
           </div>
@@ -231,7 +233,7 @@ export default function Page() {
           {/* CTA */}
           <div className="text-center">
             <Button asChild size="lg" className="bg-impact-green hover:bg-impact-green/90 text-white rounded-xl button-text">
-              <Link href="/greta">Try Greta – Free 14‑day trial</Link>
+              <a href="https://greta-v2.vercel.app" target="_blank" rel="noopener noreferrer">Try Greta – Free 14‑day trial</a>
             </Button>
             <p className="caption-text text-text-low mt-4">
               Founder plan – $25/month billed yearly
@@ -280,7 +282,7 @@ export default function Page() {
 
           <div className="text-center">
             <Button asChild size="lg" className="bg-focus-purple hover:bg-focus-purple/90 text-white rounded-xl button-text">
-              <Link href="/enterprise">Book an intro call</Link>
+              <a href="https://cal.com/georgekarani/30min" target="_blank" rel="noopener noreferrer">Book an intro call</a>
             </Button>
           </div>
         </div>
@@ -392,9 +394,11 @@ export default function Page() {
           </div>
 
           <div className="text-center">
-            <Button asChild size="lg" className="bg-impact-green hover:bg-impact-green/90 text-white rounded-xl button-text">
-              <Link href="/community">Join the community</Link>
-            </Button>
+            <a href="mailto:support@frontforumfocus.com">
+              <Button size="lg" className="bg-impact-green hover:bg-impact-green/90 text-white rounded-xl button-text">
+                Join the community
+              </Button>
+            </a>
           </div>
         </div>
       </section>
@@ -427,10 +431,10 @@ export default function Page() {
           </p>
           <div className="flex items-center justify-center gap-4">
             <Button asChild size="lg" className="bg-impact-green hover:bg-impact-green/90 text-white rounded-xl button-text">
-              <Link href="#impact-intelligence">Get Impact Intelligence</Link>
+              <a href="https://greta-v2.vercel.app" target="_blank" rel="noopener noreferrer">Try Greta free</a>
             </Button>
             <Button asChild size="lg" variant="outline" className="rounded-xl button-text border-border-color">
-              <Link href="#greta">Try Greta free</Link>
+              <Link href="/impact-intelligence">Impact Intelligence</Link>
             </Button>
           </div>
         </div>

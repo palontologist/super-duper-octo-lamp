@@ -3,22 +3,11 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Navigation } from "@/components/ui/navigation";
 import { BarChart3, Target, Users, CheckCircle, TrendingUp, ArrowRight } from "lucide-react";
 
 export default function ForOrganizationsPage() {
   return (
-    <div className="w-full min-h-screen bg-white text-text-high">
-      {/* Navigation */}
-      <nav className="sticky top-0 bg-white border-b border-border-color z-50 py-4 px-20">
-        <div className="max-w-[1440px] mx-auto flex items-center justify-between">
-          <Link href="/" className="heading-3 text-focus-purple">
-            FrontForumFocus
-          </Link>
-          <Navigation isWhitePage={true} />
-        </div>
-      </nav>
-
+    <div className="w-full min-h-screen bg-white text-text-high pt-24">
       {/* Hero Section */}
       <section className="py-24 px-20 bg-gradient-to-br from-focus-purple/10 to-background-alt">
         <div className="max-w-[1440px] mx-auto">
@@ -28,7 +17,7 @@ export default function ForOrganizationsPage() {
           </p>
           <div className="flex items-center gap-4">
             <Button asChild size="lg" className="bg-focus-purple hover:bg-focus-purple/90 text-white rounded-xl button-text">
-              <Link href="#contact">Book a Demo</Link>
+              <a href="https://cal.com/georgekarani/30min" target="_blank" rel="noopener noreferrer">Book a Demo</a>
             </Button>
             <Button asChild size="lg" variant="outline" className="rounded-xl button-text border-border-color">
               <Link href="#use-cases">Explore Use Cases</Link>
@@ -291,14 +280,11 @@ export default function ForOrganizationsPage() {
           </p>
           <div className="flex items-center justify-center gap-4">
             <Button asChild size="lg" className="bg-focus-purple hover:bg-focus-purple/90 text-white rounded-xl button-text">
-              <Link href="#">Book a Demo</Link>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="rounded-xl button-text border-border-color">
-              <Link href="#">Download Overview</Link>
+              <a href="https://cal.com/georgekarani/30min" target="_blank" rel="noopener noreferrer">Book a Demo</a>
             </Button>
           </div>
           <p className="body-small text-text-low mt-8">
-            Questions? Email us at <Link href="mailto:hello@frontforumfocus.com" className="text-focus-purple hover:underline">hello@frontforumfocus.com</Link>
+            Questions? Email us at <a href="mailto:support@frontforumfocus.com" className="text-focus-purple hover:underline">support@frontforumfocus.com</a>
           </p>
         </div>
       </section>

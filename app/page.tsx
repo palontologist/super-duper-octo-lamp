@@ -120,8 +120,7 @@ export default function HomePage() {
 
     </div>
   );
-} className="py-24 px-20">
-        <div className="max-w-[1440px] mx-auto">
+}
           <h2 className="heading-2 text-center mb-16">Two paths. One impact thesis.</h2>
           <div className="grid grid-cols-2 gap-8">
             {/* For Founders Card */}

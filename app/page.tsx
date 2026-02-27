@@ -121,32 +121,6 @@ export default function HomePage() {
     </div>
   );
 }
-            <div className="col-span-6">
-              <p className="body-large text-text-medium mb-8">
-                A newsletter and podcast on how impact, capital, and technology are turning into real infrastructure—not just PR stories.
-              </p>
-              <div className="mb-8">
-                <h3 className="body-medium font-semibold text-text-high mb-4">Impact Trends 2026 (with Rosa, DeFem Agency)</h3>
-                <ul className="space-y-3">
-                  <li className="flex items-start gap-3">
-                    <span className="text-impact-green font-bold flex-shrink-0">•</span>
-                    <span className="body-medium text-text-high">Part 1 – Where the money is going (capital & policy)</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-impact-green font-bold flex-shrink-0">•</span>
-                    <span className="body-medium text-text-high">Part 2 – What operators are actually doing on the ground</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-impact-green font-bold flex-shrink-0">•</span>
-                    <span className="body-medium text-text-high">Part 3 – Impact as infrastructure (data, rails, tooling)</span>
-                  </li>
-                </ul>
-              </div>
-              <a href="mailto:support@frontforumfocus.com" className="inline-block">
-                <Button size="lg" className="bg-impact-green hover:bg-impact-green/90 text-white rounded-xl button-text">
-                  Subscribe to Impact Intelligence
-                </Button>
-              </a>
             </div>
             <div className="col-span-6">
               <div className="aspect-square bg-gradient-to-br from-focus-purple/20 to-impact-green/20 rounded-xl flex items-center justify-center border border-border-color">

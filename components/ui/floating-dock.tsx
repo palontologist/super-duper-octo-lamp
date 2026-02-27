@@ -5,10 +5,6 @@ import Link from "next/link"
 import { CalendarIcon, HomeIcon, MailIcon, PencilIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
-import { buttonVariants } from "@/components/ui/button"
-import { Separator } from "@/components/ui/separator"
-
-import { Dock, DockIcon } from "@/registry/magicui/dock"
 
 export type IconProps = React.HTMLAttributes<SVGElement>
 
@@ -78,41 +74,33 @@ const DATA = {
 
 export function FloatingDock() {
   return (
-    <div className="pointer-events-none fixed inset-0 flex items-end justify-center pb-8 z-50">
-      <div className="pointer-events-auto">
-        <Dock direction="middle">
-          {DATA.navbar.map((item) => (
-            <DockIcon key={item.label}>
-              <Link
-                href={item.href}
-                aria-label={item.label}
-                title={item.label}
-                className={cn(
-                  buttonVariants({ variant: "ghost", size: "icon" }),
-                  "size-12 rounded-full"
-                )}
-              >
-                <item.icon className="size-4" />
-              </Link>
-            </DockIcon>
-          ))}
-          <Separator orientation="vertical" className="h-full" />
-          {Object.entries(DATA.contact.social).map(([name, social]) => (
-            <DockIcon key={name}>
-              <Link
-                href={social.url}
-                aria-label={social.name}
-                title={social.name}
-                className={cn(
-                  buttonVariants({ variant: "ghost", size: "icon" }),
-                  "size-12 rounded-full"
-                )}
-              >
-                <social.icon className="size-4" />
-              </Link>
-            </DockIcon>
-          ))}
-        </Dock>
+    <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50">
+      <div className="flex items-center gap-2 bg-black/80 backdrop-blur-md border border-white/10 rounded-full px-4 py-3">
+        {DATA.navbar.map((item) => (
+          <Link
+            key={item.label}
+            href={item.href}
+            aria-label={item.label}
+            title={item.label}
+            className="p-2 rounded-full hover:bg-white/10 transition-colors text-white/70 hover:text-white"
+          >
+            <item.icon className="w-5 h-5" />
+          </Link>
+        ))}
+        
+        <div className="w-px h-6 bg-white/10"></div>
+        
+        {Object.entries(DATA.contact.social).map(([name, social]) => (
+          <a
+            key={name}
+            href={social.url}
+            aria-label={social.name}
+            title={social.name}
+            className="p-2 rounded-full hover:bg-white/10 transition-colors text-white/70 hover:text-white"
+          >
+            <social.icon className="w-5 h-5" />
+          </a>
+        ))}
       </div>
     </div>
   )

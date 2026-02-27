@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import "./globals.css";
 import { ClientWrapper } from "@/components/ui/client-wrapper";
+import { FloatingDock } from "@/components/ui/floating-dock";
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
@@ -49,6 +50,7 @@ export default function RootLayout({
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} antialiased bg-[#111] text-white`}>
         <ClientWrapper>
+          <FloatingDock />
           {children}
         </ClientWrapper>
         <Analytics />

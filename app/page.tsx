@@ -1,62 +1,126 @@
 "use client";
 
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Separator } from "@/components/ui/separator";
-import { WaitlistForm } from "@/components/ui/waitlist-form";
-import { Check, Users, Target, BarChart3, Globe, Star, TrendingUp, Calendar, Eye } from "lucide-react";
 import { motion } from "framer-motion";
-import Image from "next/image";
+import { ArrowRight } from "lucide-react";
 
-export default function Page() {
+export default function HomePage() {
   return (
-    <div className="w-full min-h-screen bg-white text-text-high">
-      {/* Hero Section */}
-      <section id="hero" className="pt-32 pb-24 px-20 max-w-[1440px] mx-auto">
-        <div className="grid grid-cols-12 gap-6">
-          {/* Left Column */}
-          <div className="col-span-6 flex flex-col justify-center">
-            <h1 className="heading-1 mb-6 text-text-high">
-              Our mission: make impact measurable for everyone.
+    <div className="w-full h-screen bg-[#111] text-white overflow-hidden relative flex flex-col items-center justify-center">
+      {/* Grid Background */}
+      <div className="absolute inset-0 grid grid-cols-12 gap-4 opacity-5 pointer-events-none">
+        {Array.from({ length: 144 }).map((_, i) => (
+          <div key={i} className="border border-white/10"></div>
+        ))}
+      </div>
+
+      {/* Main Content */}
+      <div className="relative z-10 w-full px-6 lg:px-20 max-w-7xl mx-auto">
+        {/* Logo */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="mb-12 text-center"
+        >
+          <div className="text-3xl font-bold">
+            <span className="text-white">f</span>
+            <span className="text-yellow-300">^</span>
+            <span className="text-white">3</span>
+          </div>
+        </motion.div>
+
+        {/* Hero Headline */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mb-16">
+          {/* Left Text */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, delay: 0.2 }}
+          >
+            <h1 className="text-5xl lg:text-7xl font-black leading-tight mb-6">
+              <span className="text-yellow-300">Tech making</span> impact{" "}
+              <span className="text-white">measurable</span> for everyone.
             </h1>
-            <p className="body-large text-text-medium mb-8">
-              FrontForumFocus exists to help founders and organizations align daily work, capital, and decisions with their deepest missions.
+            <p className="text-lg lg:text-xl text-gray-300 mb-8 max-w-2xl">
+              Clear priorities, accountability, and shipped outcomes.
             </p>
-            <div className="flex items-center gap-4 mb-6">
-              <Button asChild size="lg" className="bg-impact-green hover:bg-impact-green/90 text-white rounded-xl button-text">
-                <a href="https://greta-v2.vercel.app" target="_blank" rel="noopener noreferrer">Try Greta</a>
-              </Button>
-              <Button asChild size="lg" variant="outline" className="rounded-xl button-text border-border-color">
-                <Link href="/impact-intelligence">Impact Intelligence</Link>
-              </Button>
-            </div>
-            <p className="caption-text text-text-low">
-              500+ founders · 50+ countries · 10k+ activities tracked · Bootstrapped & founder‑led
-            </p>
-          </div>
+            <Button
+              asChild
+              size="lg"
+              className="bg-yellow-300 hover:bg-yellow-400 text-black rounded-full font-bold px-8 py-6 text-lg"
+            >
+              <a
+                href="https://greta-v2.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2"
+              >
+                Try Greta
+                <ArrowRight className="w-5 h-5" />
+              </a>
+            </Button>
+          </motion.div>
 
-          
+          {/* Right Scattered Images */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, delay: 0.4 }}
+            className="relative h-96 hidden lg:block"
+          >
+            {/* Image Placeholders - Scattered Layout */}
+            <motion.div
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 4, repeat: Infinity }}
+              className="absolute top-0 right-0 w-48 h-48 bg-white/5 rounded-lg border border-white/10 flex items-center justify-center"
+            >
+              <span className="text-gray-600 text-sm">Product Image 1</span>
+            </motion.div>
+
+            <motion.div
+              animate={{ y: [0, 10, 0] }}
+              transition={{ duration: 5, repeat: Infinity, delay: 0.5 }}
+              className="absolute bottom-0 left-0 w-40 h-40 bg-white/5 rounded-lg border border-white/10 flex items-center justify-center"
+            >
+              <span className="text-gray-600 text-sm">Product Image 2</span>
+            </motion.div>
+
+            <motion.div
+              animate={{ y: [0, -8, 0] }}
+              transition={{ duration: 4.5, repeat: Infinity, delay: 1 }}
+              className="absolute top-32 left-32 w-36 h-36 bg-white/5 rounded-lg border border-white/10 flex items-center justify-center"
+            >
+              <span className="text-gray-600 text-sm">Product Image 3</span>
+            </motion.div>
+          </motion.div>
         </div>
 
-        {/* Partner Logos Strip */}
-        <div className="mt-16 pt-8 border-t border-border-color">
-          <p className="caption-text text-text-low text-center mb-6">Trusted by leading impact organizations</p>
-          <div className="flex items-center justify-center gap-12 opacity-40 grayscale">
-            <div className="w-24 h-8 bg-border-color rounded"></div>
-            <div className="w-24 h-8 bg-border-color rounded"></div>
-            <div className="w-24 h-8 bg-border-color rounded"></div>
-            <div className="w-24 h-8 bg-border-color rounded"></div>
+        {/* Stats */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.6 }}
+          className="grid grid-cols-3 gap-8 mt-16 text-center max-w-2xl mx-auto"
+        >
+          <div>
+            <div className="text-3xl font-bold text-yellow-300">500+</div>
+            <div className="text-gray-400 text-sm">Founders</div>
           </div>
-        </div>
-      </section>
+          <div>
+            <div className="text-3xl font-bold text-yellow-300">50+</div>
+            <div className="text-gray-400 text-sm">Countries</div>
+          </div>
+          <div>
+            <div className="text-3xl font-bold text-yellow-300">10k+</div>
+            <div className="text-gray-400 text-sm">Outcomes</div>
+          </div>
+        </motion.div>
+      </div>
 
-      {/* Impact Intelligence Section */}
-      <section id="impact-intelligence" className="py-24 px-20 bg-background-alt">
-        <div className="max-w-[1440px] mx-auto">
-          <h2 className="heading-2 mb-16 text-text-high">Impact Intelligence by FrontForumFocus</h2>
-          <div className="grid grid-cols-12 gap-12 items-start">
+    </div>
+  );
+}
             <div className="col-span-6">
               <p className="body-large text-text-medium mb-8">
                 A newsletter and podcast on how impact, capital, and technology are turning into real infrastructure—not just PR stories.

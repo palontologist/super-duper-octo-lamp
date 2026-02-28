@@ -53,8 +53,8 @@ export default function RootLayout({
           <FloatingDock />
           {children}
         </ClientWrapper>
-        <Analytics />
-        <SpeedInsights />
+        {/* <Analytics /> */}
+        {/* <SpeedInsights /> */}
       </body>
     </html>
   );

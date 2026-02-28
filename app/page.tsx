@@ -121,58 +121,6 @@ export default function HomePage() {
     </div>
   );
 }
-            <AccordionItem value="item-1" className="border border-border-color rounded-xl px-6">
-              <AccordionTrigger className="heading-3 text-left hover:no-underline">
-                What is Greta exactly?
-              </AccordionTrigger>
-              <AccordionContent className="body-medium text-text-medium">
-                Greta is a calendar-to-impact tool for founders. Connect your calendar, tag your work, and see which clients and projects actually align with your mission and revenue goals.
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="item-2" className="border border-border-color rounded-xl px-6">
-              <AccordionTrigger className="heading-3 text-left hover:no-underline">
-                Do I need to use all three products?
-              </AccordionTrigger>
-              <AccordionContent className="body-medium text-text-medium">
-                No. Choose what fits your needs. Founders often start with Greta. Organizations often start with the Enterprise platform. Anyone can read Impact Intelligence.
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="item-3" className="border border-border-color rounded-xl px-6">
-              <AccordionTrigger className="heading-3 text-left hover:no-underline">
-                Is this only for ESG-certified organizations?
-              </AccordionTrigger>
-              <AccordionContent className="body-medium text-text-medium">
-                No. It&apos;s for any founder or organization that cares about impact—whether you're climate tech, education, health, finance, or anything else.
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="item-4" className="border border-border-color rounded-xl px-6">
-              <AccordionTrigger className="heading-3 text-left hover:no-underline">
-                What about data privacy?
-              </AccordionTrigger>
-              <AccordionContent className="body-medium text-text-medium">
-                All your data is private by default. You own your impact dashboards and only share what you choose. No selling data. No surprises.
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
-        </div>
-      </section>
-
-      {/* Footer CTA */}
-      <section className="py-24 px-20 bg-gradient-to-br from-impact-green/10 to-focus-purple/10">
-        <div className="max-w-[800px] mx-auto text-center">
-          <h3 className="heading-2 mb-6">Ready to measure what matters?</h3>
-          <div className="flex items-center justify-center gap-4 mb-8">
-            <Button asChild size="lg" className="bg-impact-green hover:bg-impact-green/90 text-white rounded-xl button-text">
-              <Link href="#greta">Try Greta free</Link>
-            </Button>
-            <Button asChild size="lg" className="bg-focus-purple hover:bg-focus-purple/90 text-white rounded-xl button-text">
-              <Link href="#enterprise">Explore Enterprise</Link>
-            </Button>
-          </div>
-        </div>
       </section>
 
       {/* Footer */}

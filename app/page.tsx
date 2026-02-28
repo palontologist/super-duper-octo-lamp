@@ -6,7 +6,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function HomePage() {
   return (
-    <div className="w-full h-screen bg-[#111] text-white overflow-hidden relative flex flex-col items-center justify-center">
+    <div className="w-full min-h-screen bg-[#111] text-white overflow-hidden relative flex flex-col items-center justify-center py-12 md:py-0">
       {/* Grid Background */}
       <div className="absolute inset-0 grid grid-cols-12 gap-4 opacity-5 pointer-events-none">
         {Array.from({ length: 144 }).map((_, i) => (
@@ -15,15 +15,15 @@ export default function HomePage() {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 w-full px-6 lg:px-20 max-w-7xl mx-auto">
+      <div className="relative z-10 w-full px-4 sm:px-6 lg:px-20 max-w-6xl mx-auto">
         {/* Logo */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="mb-12 text-center"
+          className="mb-8 md:mb-12 text-center"
         >
-          <div className="text-3xl font-bold">
+          <div className="text-2xl md:text-3xl font-bold">
             <span className="text-white">f</span>
             <span className="text-yellow-300">^</span>
             <span className="text-white">3</span>
@@ -31,24 +31,24 @@ export default function HomePage() {
         </motion.div>
 
         {/* Hero Headline */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 items-center mb-12 md:mb-16">
           {/* Left Text */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
+            className="flex flex-col"
           >
-            <h1 className="text-5xl lg:text-7xl font-black leading-tight mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-4 md:mb-6">
               <span className="text-yellow-300">Tech making</span> impact{" "}
               <span className="text-white">measurable</span> for everyone.
             </h1>
-            <p className="text-lg lg:text-xl text-gray-300 mb-8 max-w-2xl">
+            <p className="text-sm sm:text-base md:text-lg text-gray-300 mb-6 md:mb-8 max-w-2xl">
               Clear priorities, accountability, and shipped outcomes.
             </p>
             <Button
               asChild
-              size="lg"
-              className="bg-yellow-300 hover:bg-yellow-400 text-black rounded-full font-bold px-8 py-6 text-lg"
+              className="bg-yellow-300 hover:bg-yellow-400 text-black rounded-full font-bold px-6 md:px-8 py-3 md:py-6 text-base md:text-lg w-fit"
             >
               <a
                 href="https://greta-v2.vercel.app"
@@ -57,42 +57,24 @@ export default function HomePage() {
                 className="flex items-center gap-2"
               >
                 Try Greta
-                <ArrowRight className="w-5 h-5" />
+                <ArrowRight className="w-4 md:w-5 h-4 md:h-5" />
               </a>
             </Button>
           </motion.div>
 
-          {/* Right Scattered Images */}
+          {/* Right Centered Content */}
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.4 }}
-            className="relative h-96 hidden lg:block"
+            className="relative h-64 md:h-80 lg:h-96 flex items-center justify-center"
           >
-            {/* Image Placeholders - Scattered Layout */}
+            {/* Central Animated Sphere */}
             <motion.div
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 4, repeat: Infinity }}
-              className="absolute top-0 right-0 w-48 h-48 bg-white/5 rounded-lg border border-white/10 flex items-center justify-center"
-            >
-              <span className="text-gray-600 text-sm">Product Image 1</span>
-            </motion.div>
-
-            <motion.div
-              animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 5, repeat: Infinity, delay: 0.5 }}
-              className="absolute bottom-0 left-0 w-40 h-40 bg-white/5 rounded-lg border border-white/10 flex items-center justify-center"
-            >
-              <span className="text-gray-600 text-sm">Product Image 2</span>
-            </motion.div>
-
-            <motion.div
-              animate={{ y: [0, -8, 0] }}
-              transition={{ duration: 4.5, repeat: Infinity, delay: 1 }}
-              className="absolute top-32 left-32 w-36 h-36 bg-white/5 rounded-lg border border-white/10 flex items-center justify-center"
-            >
-              <span className="text-gray-600 text-sm">Product Image 3</span>
-            </motion.div>
+              animate={{ rotate: 360 }}
+              transition={{ duration: 20, repeat: Infinity, linear: true }}
+              className="w-48 md:w-56 lg:w-64 h-48 md:h-56 lg:h-64 bg-gradient-to-br from-white/10 to-gray-700/20 rounded-full shadow-2xl border border-white/5"
+            />
           </motion.div>
         </div>
 
@@ -101,23 +83,22 @@ export default function HomePage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6 }}
-          className="grid grid-cols-3 gap-8 mt-16 text-center max-w-2xl mx-auto"
+          className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8 text-center"
         >
           <div>
-            <div className="text-3xl font-bold text-yellow-300">500+</div>
-            <div className="text-gray-400 text-sm">Founders</div>
+            <div className="text-2xl md:text-3xl font-bold text-yellow-300">500+</div>
+            <div className="text-xs md:text-sm text-gray-400">Founders</div>
           </div>
           <div>
-            <div className="text-3xl font-bold text-yellow-300">50+</div>
-            <div className="text-gray-400 text-sm">Countries</div>
+            <div className="text-2xl md:text-3xl font-bold text-yellow-300">50+</div>
+            <div className="text-xs md:text-sm text-gray-400">Countries</div>
           </div>
           <div>
-            <div className="text-3xl font-bold text-yellow-300">10k+</div>
-            <div className="text-gray-400 text-sm">Outcomes</div>
+            <div className="text-2xl md:text-3xl font-bold text-yellow-300">10k+</div>
+            <div className="text-xs md:text-sm text-gray-400">Outcomes</div>
           </div>
         </motion.div>
       </div>
-
     </div>
   );
 }

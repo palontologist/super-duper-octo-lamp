@@ -6,7 +6,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function HomePage() {
   return (
-    <div className="w-full min-h-screen bg-[#111] text-white overflow-hidden relative flex flex-col items-center justify-center py-12 md:py-0">
+    <div className="w-full h-screen bg-[#111] text-white overflow-hidden relative flex flex-col items-center justify-center">
       {/* Grid Background */}
       <div className="absolute inset-0 grid grid-cols-12 gap-4 opacity-5 pointer-events-none">
         {Array.from({ length: 144 }).map((_, i) => (
@@ -46,20 +46,31 @@ export default function HomePage() {
             <p className="text-sm sm:text-base md:text-lg text-gray-300 mb-6 md:mb-8 max-w-2xl">
               Clear priorities, accountability, and shipped outcomes.
             </p>
-            <Button
-              asChild
-              className="bg-yellow-300 hover:bg-yellow-400 text-black rounded-full font-bold px-6 md:px-8 py-3 md:py-6 text-base md:text-lg w-fit"
-            >
-              <a
-                href="https://greta-v2.vercel.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2"
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
+              <Button
+                asChild
+                className="bg-yellow-300 hover:bg-yellow-400 text-black rounded-full font-bold px-6 md:px-8 py-3 md:py-6 text-base md:text-lg"
               >
-                Try Greta
-                <ArrowRight className="w-4 md:w-5 h-4 md:h-5" />
-              </a>
-            </Button>
+                <a
+                  href="https://greta-v2.vercel.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2"
+                >
+                  Try Greta
+                  <ArrowRight className="w-4 md:w-5 h-4 md:h-5" />
+                </a>
+              </Button>
+              <Button
+                asChild
+                className="border border-yellow-300 text-yellow-300 hover:bg-yellow-300/10 rounded-full font-bold px-6 md:px-8 py-3 md:py-6 text-base md:text-lg"
+              >
+                <a href="/impact-intelligence" className="flex items-center gap-2">
+                  Impact Intelligence
+                  <ArrowRight className="w-4 md:w-5 h-4 md:h-5" />
+                </a>
+              </Button>
+            </div>
           </motion.div>
 
           {/* Right Centered Content */}
@@ -78,26 +89,7 @@ export default function HomePage() {
           </motion.div>
         </div>
 
-        {/* Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.6 }}
-          className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8 text-center"
-        >
-          <div>
-            <div className="text-2xl md:text-3xl font-bold text-yellow-300">500+</div>
-            <div className="text-xs md:text-sm text-gray-400">Founders</div>
-          </div>
-          <div>
-            <div className="text-2xl md:text-3xl font-bold text-yellow-300">50+</div>
-            <div className="text-xs md:text-sm text-gray-400">Countries</div>
-          </div>
-          <div>
-            <div className="text-2xl md:text-3xl font-bold text-yellow-300">10k+</div>
-            <div className="text-xs md:text-sm text-gray-400">Outcomes</div>
-          </div>
-        </motion.div>
+
       </div>
     </div>
   );

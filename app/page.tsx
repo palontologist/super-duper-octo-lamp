@@ -121,50 +121,6 @@ export default function HomePage() {
     </div>
   );
 }
-      <section id="final-cta" className="py-24 px-20">
-        <div className="max-w-[800px] mx-auto text-center">
-          <h2 className="heading-2 mb-4">Start building with impact intelligence.</h2>
-          <p className="body-large text-text-medium mb-12">
-            Get the signals, tools, and community you need to grow with purpose and financial clarity.
-          </p>
-          <div className="flex items-center justify-center gap-4">
-            <Button asChild size="lg" className="bg-impact-green hover:bg-impact-green/90 text-white rounded-xl button-text">
-              <a href="https://greta-v2.vercel.app" target="_blank" rel="noopener noreferrer">Try Greta free</a>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="rounded-xl button-text border-border-color">
-              <Link href="/impact-intelligence">Impact Intelligence</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Lead Form Section */}
-      <section id="apply" className="py-24 px-20 bg-background-alt">
-        <div className="max-w-[640px] mx-auto">
-          <h2 className="heading-2 text-center mb-4">Stay updated on impact intelligence</h2>
-          <p className="body-medium text-text-low text-center mb-12">Get insights, tools, and community updates delivered to your inbox. No spam, just impact.</p>
-          
-          <Card className="border-border-color shadow-lg">
-            <CardContent className="pt-6">
-              <WaitlistForm 
-                buttonText="Apply now"
-                placeholder="you@example.com"
-                successMessage="Application received! We'll review it within 48 hours and send next steps to your email."
-                className="space-y-2"
-                inputClassName="bg-white border-border-color text-text-high placeholder-text-low h-12 rounded-xl"
-                buttonClassName="bg-impact-green hover:bg-impact-green/90 text-white h-12 rounded-xl button-text px-8"
-              />
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section id="faq" className="py-24 px-20">
-        <div className="max-w-[800px] mx-auto">
-          <h2 className="heading-2 text-center mb-16">Frequently asked</h2>
-          
-          <Accordion type="single" collapsible className="space-y-4">
             <AccordionItem value="item-1" className="border border-border-color rounded-xl px-6">
               <AccordionTrigger className="heading-3 text-left hover:no-underline">
                 What is Greta exactly?

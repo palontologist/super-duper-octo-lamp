@@ -11,10 +11,12 @@ export function Navigation({ isWhitePage = false }: NavigationProps) {
   const pathname = usePathname();
   
   const links = [
-    { href: "/", label: "Home", hoverColor: isWhitePage ? "hover:text-blue-600" : "hover:text-blue-400" },
-    { href: "/measure", label: "Mission", hoverColor: isWhitePage ? "hover:text-green-600" : "hover:text-green-400" },
-    { href: "/vibes", label: "Vibes", hoverColor: isWhitePage ? "hover:text-purple-600" : "hover:text-purple-400" },
-    { href: "/start", label: "About", hoverColor: isWhitePage ? "hover:text-yellow-600" : "hover:text-yellow-400" }
+    { href: "/", label: "Home", hoverColor: isWhitePage ? "hover:text-impact-green" : "hover:text-impact-green" },
+    { href: "/impact-intelligence", label: "Impact Intelligence", hoverColor: isWhitePage ? "hover:text-focus-purple" : "hover:text-focus-purple" },
+    { href: "/for-founders", label: "For Founders", hoverColor: isWhitePage ? "hover:text-impact-green" : "hover:text-impact-green" },
+    { href: "/for-organizations", label: "For Organizations", hoverColor: isWhitePage ? "hover:text-focus-purple" : "hover:text-focus-purple" },
+    { href: "/mission", label: "Mission", hoverColor: isWhitePage ? "hover:text-impact-green" : "hover:text-impact-green" },
+    { href: "/stories", label: "Stories", hoverColor: isWhitePage ? "hover:text-focus-purple" : "hover:text-focus-purple" }
   ];
 
   return (

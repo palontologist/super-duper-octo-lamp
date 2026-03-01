@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import "./globals.css";
 import { ClientWrapper } from "@/components/ui/client-wrapper";
@@ -29,11 +29,15 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "F^3",
   description: "The OS for founder focus",
-  viewport: "width=device-width, initial-scale=1",
-  themeColor: "#111111",
   icons: {
     icon: "/s.png",
   },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#111111",
 };
 
 export default function RootLayout({

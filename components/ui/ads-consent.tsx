@@ -16,6 +16,7 @@ export default function AdsConsent() {
   const [consent, setConsent] = useState<string | null>(null);
 
   useEffect(() => {
+    if (typeof window === 'undefined') return;
     const stored = localStorage.getItem(ADS_KEY);
     setConsent(stored);
 

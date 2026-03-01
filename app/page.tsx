@@ -472,6 +472,9 @@ export default function Page() {
           <Link href="https://sourcia.ai/agent-george" target="_blank" rel="noopener noreferrer" className="caption-text text-focus-purple hover:underline whitespace-nowrap">
             Intro call
           </Link>
+        </div>
+      </div>
+
       <div className="relative min-h-screen flex items-center justify-center">
         {/* Background Image - Using MOSHED image */}
         <motion.div 
